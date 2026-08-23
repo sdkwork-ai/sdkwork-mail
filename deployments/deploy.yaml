@@ -1,6 +1,5 @@
 version: 2
 defaultProfile: cloud.production
-
 profiles:
   cloud.test:
     deployment:
@@ -21,6 +20,26 @@ profiles:
         tls: sdkwork.com
         mode: web+api
         web: adaptive
+      - domain: mail-test.birdcoder.com
+        tls: birdcoder.com
+        mode: web+api
+        web: adaptive
+      - domain: mail-test.dtupay.com
+        tls: dtupay.com
+        mode: web+api
+        web: adaptive
+      - domain: mail-test.sdkwork.cn
+        tls: sdkwork.cn
+        mode: web+api
+        web: adaptive
+      - domain: mail-test.birdcoder.cn
+        tls: birdcoder.cn
+        mode: web+api
+        web: adaptive
+      - domain: mail-test.dtupay.cn
+        tls: dtupay.cn
+        mode: web+api
+        web: adaptive
     packages:
       - mini-program-weixin
     overrides:
@@ -30,7 +49,6 @@ profiles:
         env: etc/topology/cloud.test.env
       kubernetes:
         reference: deployments/kubernetes/
-
   cloud.staging:
     deployment:
       deploymentProfile: cloud
@@ -50,6 +68,26 @@ profiles:
         tls: sdkwork.com
         mode: web+api
         web: adaptive
+      - domain: mail-staging.birdcoder.com
+        tls: birdcoder.com
+        mode: web+api
+        web: adaptive
+      - domain: mail-staging.dtupay.com
+        tls: dtupay.com
+        mode: web+api
+        web: adaptive
+      - domain: mail-staging.sdkwork.cn
+        tls: sdkwork.cn
+        mode: web+api
+        web: adaptive
+      - domain: mail-staging.birdcoder.cn
+        tls: birdcoder.cn
+        mode: web+api
+        web: adaptive
+      - domain: mail-staging.dtupay.cn
+        tls: dtupay.cn
+        mode: web+api
+        web: adaptive
     packages:
       - mini-program-weixin
     overrides:
@@ -59,7 +97,6 @@ profiles:
         env: etc/topology/cloud.staging.env
       kubernetes:
         reference: deployments/kubernetes/
-
   cloud.production:
     deployment:
       deploymentProfile: cloud
@@ -79,6 +116,26 @@ profiles:
         tls: sdkwork.com
         mode: web+api
         web: adaptive
+      - domain: mail.birdcoder.com
+        tls: birdcoder.com
+        mode: web+api
+        web: adaptive
+      - domain: mail.dtupay.com
+        tls: dtupay.com
+        mode: web+api
+        web: adaptive
+      - domain: mail.sdkwork.cn
+        tls: sdkwork.cn
+        mode: web+api
+        web: adaptive
+      - domain: mail.birdcoder.cn
+        tls: birdcoder.cn
+        mode: web+api
+        web: adaptive
+      - domain: mail.dtupay.cn
+        tls: dtupay.cn
+        mode: web+api
+        web: adaptive
     packages:
       - mini-program-weixin
     overrides:
@@ -88,7 +145,6 @@ profiles:
         env: etc/topology/cloud.production.env
       kubernetes:
         reference: deployments/kubernetes/
-
   standalone.production:
     deployment:
       deploymentProfile: standalone
@@ -103,7 +159,31 @@ profiles:
       availabilityMode: single-instance
     install:
       layout: binary-package
-    expose: []
+    expose:
+      - tls: sdkwork.com
+        mode: web
+        web: adaptive
+        domain: mail.sdkwork.com
+      - tls: birdcoder.com
+        mode: web
+        web: adaptive
+        domain: mail.birdcoder.com
+      - tls: dtupay.com
+        mode: web
+        web: adaptive
+        domain: mail.dtupay.com
+      - tls: sdkwork.cn
+        mode: web
+        web: adaptive
+        domain: mail.sdkwork.cn
+      - tls: birdcoder.cn
+        mode: web
+        web: adaptive
+        domain: mail.birdcoder.cn
+      - tls: dtupay.cn
+        mode: web
+        web: adaptive
+        domain: mail.dtupay.cn
     packages: []
     overrides:
       topology:
