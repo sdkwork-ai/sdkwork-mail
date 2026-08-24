@@ -62,7 +62,16 @@
     "dev:browser:cloud": "pnpm exec sdkwork-app dev --runtime-target browser --deployment-profile cloud",
     "dev:browser:postgres:standalone:local": "node scripts/mail-dev.mjs --deployment-profile standalone --target h5",
     "db:postgres:plan": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . plan --engine postgres",
-    "db:postgres:init": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . init --engine postgres"
+    "db:postgres:init": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . init --engine postgres",
+    "build:h5:dev": "node ../sdkwork-specs/tools/build-browser-client.mjs --root . --architecture h5 --environment dev",
+    "build:h5:test": "node ../sdkwork-specs/tools/build-browser-client.mjs --root . --architecture h5 --environment test",
+    "build:h5:staging": "node ../sdkwork-specs/tools/build-browser-client.mjs --root . --architecture h5 --environment staging",
+    "build:h5:prod": "node ../sdkwork-specs/tools/build-browser-client.mjs --root . --architecture h5 --environment prod",
+    "build:pc:dev": "node ../sdkwork-specs/tools/build-browser-client.mjs --root . --architecture pc --environment dev",
+    "build:pc:test": "node ../sdkwork-specs/tools/build-browser-client.mjs --root . --architecture pc --environment test",
+    "build:pc:staging": "node ../sdkwork-specs/tools/build-browser-client.mjs --root . --architecture pc --environment staging",
+    "build:pc:prod": "node ../sdkwork-specs/tools/build-browser-client.mjs --root . --architecture pc --environment prod",
+    "check:browser-build-scripts": "node ../sdkwork-specs/tools/check-browser-build-scripts.mjs --root ."
   },
   "dependencies": {
     "@sdkwork/app-topology": "workspace:*"
