@@ -1,0 +1,21 @@
+{
+  "environment": "production",
+  "deploymentProfile": "standalone",
+  "profileId": "standalone.production",
+  "runtimeTarget": "browser",
+  "browserOriginMode": "same-origin",
+  "Mail": {
+    "apiBaseUrl": "http://127.0.0.1:18090/app/v3/api",
+    "backendApiBaseUrl": "http://127.0.0.1:18090/backend/v3/api",
+    "defaultMediaMode": "video",
+    "providerSelection": "auto"
+  },
+  "appbase": {
+    "loginUrl": "http://127.0.0.1:3900"
+  },
+  "appApiBaseUrl": "/",
+  "backendApiBaseUrl": "/",
+  "driveAppApiBaseUrl": "/",
+  "appbaseAppApiBaseUrl": "/",
+  "deployAppApiBaseUrl": "/"
+}

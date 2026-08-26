@@ -1,0 +1,21 @@
+{
+  "environment": "production",
+  "deploymentProfile": "cloud",
+  "profileId": "cloud.production",
+  "runtimeTarget": "browser",
+  "browserOriginMode": "cross-origin",
+  "Mail": {
+    "apiBaseUrl": "http://127.0.0.1:18090/app/v3/api",
+    "backendApiBaseUrl": "http://127.0.0.1:18090/backend/v3/api",
+    "defaultMediaMode": "video",
+    "providerSelection": "auto"
+  },
+  "appbase": {
+    "loginUrl": "http://127.0.0.1:3900"
+  },
+  "appApiBaseUrl": "https://api.sdkwork.com",
+  "backendApiBaseUrl": "https://api.sdkwork.com",
+  "driveAppApiBaseUrl": "https://api.sdkwork.com",
+  "appbaseAppApiBaseUrl": "https://api.sdkwork.com",
+  "deployAppApiBaseUrl": "https://api.sdkwork.com"
+}

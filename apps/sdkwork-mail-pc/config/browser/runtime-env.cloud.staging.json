@@ -1,0 +1,21 @@
+{
+  "environment": "staging",
+  "deploymentProfile": "cloud",
+  "profileId": "cloud.staging",
+  "runtimeTarget": "browser",
+  "browserOriginMode": "cross-origin",
+  "Mail": {
+    "apiBaseUrl": "http://127.0.0.1:18090/app/v3/api",
+    "backendApiBaseUrl": "http://127.0.0.1:18090/backend/v3/api",
+    "defaultMediaMode": "video",
+    "providerSelection": "auto"
+  },
+  "appbase": {
+    "loginUrl": "http://127.0.0.1:3900"
+  },
+  "appApiBaseUrl": "https://api-staging.sdkwork.com",
+  "backendApiBaseUrl": "https://api-staging.sdkwork.com",
+  "driveAppApiBaseUrl": "https://api-staging.sdkwork.com",
+  "appbaseAppApiBaseUrl": "https://api-staging.sdkwork.com",
+  "deployAppApiBaseUrl": "https://api-staging.sdkwork.com"
+}
