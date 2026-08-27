@@ -54,3 +54,4 @@ coverage/
 *.log
 .DS_Store
 Thumbs.db
+**/public/runtime-env.json
