@@ -28,14 +28,7 @@ export default defineConfig(({ mode }) => {
     },
             plugins: [react()],
     resolve: {
-      alias: {
-        ),
-        ),
-        ),
-        ),
-        ),
-        ),
-      },
+      dedupe: ["react", "react-dom"],
     },
     server: { port: 3001 },
   };
