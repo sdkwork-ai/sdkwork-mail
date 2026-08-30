@@ -59,7 +59,7 @@ test("sdkwork-mail migration contract rejects RTC references in flutter mobile s
 });
 
 test("sdkwork-mail migration contract uses mail transport provider schemas only", () => {
-  const schemaDir = path.join(process.cwd(), "configs/provider-schemas");
+  const schemaDir = path.join(process.cwd(), "specs/provider-schemas");
   const schemaNames = readdirSync(schemaDir).filter((name) => name.endsWith(".json")).sort();
   assert.deepEqual(schemaNames, ["imap.json", "smtp.json"]);
 });

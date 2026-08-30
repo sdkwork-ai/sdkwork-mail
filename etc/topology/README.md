@@ -11,5 +11,7 @@ Platform standard: `../../sdkwork-specs/APP_RUNTIME_TOPOLOGY_ADOPTION.md`
 | `standalone.development` | `pnpm dev`, `pnpm dev:browser:postgres:standalone:local`, `pnpm dev:flutter-android`, `pnpm dev:server` |
 | `cloud.development` | `pnpm dev:browser:cloud` |
 | `cloud.production` | packaging / release |
+| `standalone.demo` | independent demo deployment |
+| `cloud.demo` | cloud demo deployment |
 
 Loader: `scripts/lib/mail-topology.mjs` → `@sdkwork/app-topology`.

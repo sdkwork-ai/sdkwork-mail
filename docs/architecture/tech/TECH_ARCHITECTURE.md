@@ -71,7 +71,7 @@ IM integration is one-way: `sdkwork-im` may consume Mail SDKs; Mail must not dep
 - `crates/` — Rust service, routes, gateway host
 - `apps/<app-root>/packages/` — client packages (no root-level `packages/`)
 - `database/` — application-root database module for `sdkwork-database` CLI
-- `configs/` — runtime env examples and topology bindings
+- `etc/` — deployment env/profile config; `etc/examples/` holds config templates
 
 ## 5. API, SDK, And Data Ownership
 
@@ -106,7 +106,7 @@ Key environment variables:
 | `SDKWORK_AUTH_TOKEN` / `SDKWORK_ACCESS_TOKEN` | Service credentials for Drive facade |
 | `SDKWORK_MAIL_SMTP_*` / `SDKWORK_MAIL_IMAP_*` | Transport plugin configuration |
 
-See `configs/mail-runtime.env.example` and `specs/topology.spec.json`.
+See `etc/examples/mail-runtime.env.example` and `specs/topology.spec.json`.
 
 ## 8. Architecture Decision Index
 

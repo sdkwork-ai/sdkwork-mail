@@ -145,7 +145,7 @@ assert.ok(
   'etc/topology/README.md required',
 );
 
-const runtimeExample = readText('configs/mail-runtime.env.example');
+const runtimeExample = readText('etc/examples/mail-runtime.env.example');
 assert.match(
   runtimeExample,
   /SDKWORK_MAIL_APPLICATION_PUBLIC_INGRESS_BIND/u,
