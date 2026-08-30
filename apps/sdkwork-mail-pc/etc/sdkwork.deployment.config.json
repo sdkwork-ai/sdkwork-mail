@@ -17,16 +17,16 @@
       "source": "../config/browser/runtime-env.cloud.production.json"
     },
     "standalone.development": {
-      "source": "../config/browser/runtime-env.standalone.development.json"
+      "source": "browser/runtime-env.standalone.development.json"
     },
     "standalone.test": {
-      "source": "../config/browser/runtime-env.standalone.test.json"
+      "source": "browser/runtime-env.standalone.test.json"
     },
     "standalone.staging": {
-      "source": "../config/browser/runtime-env.standalone.staging.json"
+      "source": "browser/runtime-env.standalone.staging.json"
     },
     "standalone.production": {
-      "source": "../config/browser/runtime-env.standalone.production.json"
+      "source": "browser/runtime-env.standalone.production.json"
     }
   },
   "materialization": {
