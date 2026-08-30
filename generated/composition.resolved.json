@@ -7,11 +7,14 @@
       "workspace": "sdkwork-drive-app-sdk",
       "surface": "app-api",
       "apiPrefix": "/app/v3/api",
-      "connectivityPlane": "application",
-      "runtimeMode": "same-origin-embedded",
+      "connectivityPlane": "platform",
+      "runtimeMode": "external-via-platform-surface",
       "mountStatus": null,
       "envKey": "VITE_SDKWORK_DRIVE_APP_API_BASE_URL",
-      "forbidProductSameOriginFallback": false,
+      "forbidApplicationSameOriginFallback": true,
+      "sdkOwner": "sdkwork-drive",
+      "apiAuthority": "sdkwork-drive-app-api",
+      "consumerSdkOwner": "sdkwork-mail",
       "corePackage": "sdkwork-mail-h5-core",
       "source": "apps/sdkwork-mail-h5/packages/sdkwork-mail-h5-core/specs/component.spec.json"
     },
@@ -23,19 +26,10 @@
       "runtimeMode": "same-origin-embedded",
       "mountStatus": null,
       "envKey": "VITE_SDKWORK_MAIL_APP_API_BASE_URL",
-      "forbidProductSameOriginFallback": false,
-      "corePackage": "sdkwork-mail-h5-core",
-      "source": "apps/sdkwork-mail-h5/packages/sdkwork-mail-h5-core/specs/component.spec.json"
-    },
-    {
-      "workspace": "sdkwork-utils",
-      "surface": "open-api",
-      "apiPrefix": null,
-      "connectivityPlane": "application",
-      "runtimeMode": "same-origin-embedded",
-      "mountStatus": null,
-      "envKey": null,
-      "forbidProductSameOriginFallback": false,
+      "forbidApplicationSameOriginFallback": false,
+      "sdkOwner": "sdkwork-mail",
+      "apiAuthority": "sdkwork-mail-app-api",
+      "consumerSdkOwner": "sdkwork-mail",
       "corePackage": "sdkwork-mail-h5-core",
       "source": "apps/sdkwork-mail-h5/packages/sdkwork-mail-h5-core/specs/component.spec.json"
     },
@@ -47,7 +41,10 @@
       "runtimeMode": "same-origin-embedded",
       "mountStatus": null,
       "envKey": "VITE_SDKWORK_MAIL_BACKEND_API_BASE_URL",
-      "forbidProductSameOriginFallback": false,
+      "forbidApplicationSameOriginFallback": false,
+      "sdkOwner": "sdkwork-mail",
+      "apiAuthority": "sdkwork-mail-backend-api",
+      "consumerSdkOwner": "sdkwork-mail",
       "corePackage": "sdkwork-mail-h5-admin-core",
       "source": "apps/sdkwork-mail-h5/packages/sdkwork-mail-h5-admin-core/specs/component.spec.json"
     },
@@ -55,11 +52,14 @@
       "workspace": "sdkwork-drive-app-sdk",
       "surface": "app-api",
       "apiPrefix": "/app/v3/api",
-      "connectivityPlane": "application",
-      "runtimeMode": "same-origin-embedded",
+      "connectivityPlane": "platform",
+      "runtimeMode": "external-via-platform-surface",
       "mountStatus": null,
       "envKey": "VITE_SDKWORK_DRIVE_APP_API_BASE_URL",
-      "forbidProductSameOriginFallback": false,
+      "forbidApplicationSameOriginFallback": true,
+      "sdkOwner": "sdkwork-drive",
+      "apiAuthority": "sdkwork-drive-app-api",
+      "consumerSdkOwner": "sdkwork-mail",
       "corePackage": "sdkwork-mail-mp-core",
       "source": "apps/sdkwork-mail-mini-program/packages/sdkwork-mail-mp-core/specs/component.spec.json"
     },
@@ -71,19 +71,10 @@
       "runtimeMode": "same-origin-embedded",
       "mountStatus": null,
       "envKey": "VITE_SDKWORK_MAIL_APP_API_BASE_URL",
-      "forbidProductSameOriginFallback": false,
-      "corePackage": "sdkwork-mail-mp-core",
-      "source": "apps/sdkwork-mail-mini-program/packages/sdkwork-mail-mp-core/specs/component.spec.json"
-    },
-    {
-      "workspace": "sdkwork-utils",
-      "surface": "open-api",
-      "apiPrefix": null,
-      "connectivityPlane": "application",
-      "runtimeMode": "same-origin-embedded",
-      "mountStatus": null,
-      "envKey": null,
-      "forbidProductSameOriginFallback": false,
+      "forbidApplicationSameOriginFallback": false,
+      "sdkOwner": "sdkwork-mail",
+      "apiAuthority": "sdkwork-mail-app-api",
+      "consumerSdkOwner": "sdkwork-mail",
       "corePackage": "sdkwork-mail-mp-core",
       "source": "apps/sdkwork-mail-mini-program/packages/sdkwork-mail-mp-core/specs/component.spec.json"
     },
@@ -91,11 +82,14 @@
       "workspace": "sdkwork-drive-app-sdk",
       "surface": "app-api",
       "apiPrefix": "/app/v3/api",
-      "connectivityPlane": "application",
-      "runtimeMode": "same-origin-embedded",
+      "connectivityPlane": "platform",
+      "runtimeMode": "external-via-platform-surface",
       "mountStatus": null,
       "envKey": "VITE_SDKWORK_DRIVE_APP_API_BASE_URL",
-      "forbidProductSameOriginFallback": false,
+      "forbidApplicationSameOriginFallback": true,
+      "sdkOwner": "sdkwork-drive",
+      "apiAuthority": "sdkwork-drive-app-api",
+      "consumerSdkOwner": "sdkwork-mail",
       "corePackage": "sdkwork-mail-pc-core",
       "source": "apps/sdkwork-mail-pc/packages/sdkwork-mail-pc-core/specs/component.spec.json"
     },
@@ -107,19 +101,10 @@
       "runtimeMode": "same-origin-embedded",
       "mountStatus": null,
       "envKey": "VITE_SDKWORK_MAIL_APP_API_BASE_URL",
-      "forbidProductSameOriginFallback": false,
-      "corePackage": "sdkwork-mail-pc-core",
-      "source": "apps/sdkwork-mail-pc/packages/sdkwork-mail-pc-core/specs/component.spec.json"
-    },
-    {
-      "workspace": "sdkwork-utils",
-      "surface": "open-api",
-      "apiPrefix": null,
-      "connectivityPlane": "application",
-      "runtimeMode": "same-origin-embedded",
-      "mountStatus": null,
-      "envKey": null,
-      "forbidProductSameOriginFallback": false,
+      "forbidApplicationSameOriginFallback": false,
+      "sdkOwner": "sdkwork-mail",
+      "apiAuthority": "sdkwork-mail-app-api",
+      "consumerSdkOwner": "sdkwork-mail",
       "corePackage": "sdkwork-mail-pc-core",
       "source": "apps/sdkwork-mail-pc/packages/sdkwork-mail-pc-core/specs/component.spec.json"
     },
@@ -131,41 +116,1572 @@
       "runtimeMode": "same-origin-embedded",
       "mountStatus": null,
       "envKey": "VITE_SDKWORK_MAIL_BACKEND_API_BASE_URL",
-      "forbidProductSameOriginFallback": false,
+      "forbidApplicationSameOriginFallback": false,
+      "sdkOwner": "sdkwork-mail",
+      "apiAuthority": "sdkwork-mail-backend-api",
+      "consumerSdkOwner": "sdkwork-mail",
       "corePackage": "sdkwork-mail-pc-admin-core",
       "source": "apps/sdkwork-mail-pc/packages/sdkwork-mail-pc-admin-core/specs/component.spec.json"
-    },
-    {
-      "workspace": "sdkwork-utils",
-      "surface": "open-api",
-      "apiPrefix": null,
-      "connectivityPlane": "application",
-      "runtimeMode": "same-origin-embedded",
-      "mountStatus": null,
-      "envKey": null,
-      "forbidProductSameOriginFallback": false,
-      "corePackage": "sdkwork-mail-workspace",
-      "source": "specs/component.spec.json"
     },
     {
       "workspace": "sdkwork-drive-app-sdk",
       "surface": "app-api",
       "apiPrefix": "/app/v3/api",
-      "connectivityPlane": "application",
-      "runtimeMode": "same-origin-embedded",
+      "connectivityPlane": "platform",
+      "runtimeMode": "external-via-platform-surface",
       "mountStatus": null,
       "envKey": "VITE_SDKWORK_DRIVE_APP_API_BASE_URL",
-      "forbidProductSameOriginFallback": false,
+      "forbidApplicationSameOriginFallback": true,
+      "sdkOwner": "sdkwork-drive",
+      "apiAuthority": "sdkwork-drive-app-api",
+      "consumerSdkOwner": "sdkwork-mail",
       "corePackage": "sdkwork-mail-workspace",
       "source": "specs/component.spec.json"
     }
   ],
   "permissions": {
     "inheritanceMode": "module-catalog-with-overrides",
-    "inheritedManifests": []
+    "inheritedManifests": [
+      {
+        "workspace": "sdkwork-drive-app-sdk",
+        "manifestRef": "../sdkwork-iam/iam/modules/drive/iam.module.manifest.json",
+        "inheritPermissions": true
+      },
+      {
+        "workspace": "sdkwork-mail-app-sdk",
+        "manifestRef": "specs/iam.module.manifest.json",
+        "inheritPermissions": true
+      },
+      {
+        "workspace": "sdkwork-mail-backend-sdk",
+        "manifestRef": "specs/iam.module.manifest.json",
+        "inheritPermissions": true
+      },
+      {
+        "workspace": "sdkwork-drive-app-sdk",
+        "manifestRef": "../sdkwork-iam/iam/modules/drive/iam.module.manifest.json",
+        "inheritPermissions": true
+      },
+      {
+        "workspace": "sdkwork-mail-app-sdk",
+        "manifestRef": "specs/iam.module.manifest.json",
+        "inheritPermissions": true
+      },
+      {
+        "workspace": "sdkwork-drive-app-sdk",
+        "manifestRef": "../sdkwork-iam/iam/modules/drive/iam.module.manifest.json",
+        "inheritPermissions": true
+      },
+      {
+        "workspace": "sdkwork-mail-app-sdk",
+        "manifestRef": "specs/iam.module.manifest.json",
+        "inheritPermissions": true
+      },
+      {
+        "workspace": "sdkwork-mail-backend-sdk",
+        "manifestRef": "specs/iam.module.manifest.json",
+        "inheritPermissions": true
+      },
+      {
+        "workspace": "sdkwork-drive-app-sdk",
+        "manifestRef": "../sdkwork-iam/iam/modules/drive/iam.module.manifest.json",
+        "inheritPermissions": true
+      }
+    ]
+  },
+  "architecture": {
+    "components": [
+      {
+        "name": "sdkwork_mail_flutter_mobile_admin_core",
+        "type": "flutter-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-flutter-mobile/packages/sdkwork_mail_flutter_mobile_admin_core",
+        "domain": "communication",
+        "capability": "admin-core",
+        "surface": null,
+        "languages": [
+          "dart"
+        ],
+        "source": "apps/sdkwork-mail-flutter-mobile/packages/sdkwork_mail_flutter_mobile_admin_core/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork_mail_flutter_mobile_commons",
+        "type": "flutter-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-flutter-mobile/packages/sdkwork_mail_flutter_mobile_commons",
+        "domain": "communication",
+        "capability": "commons",
+        "surface": null,
+        "languages": [
+          "dart"
+        ],
+        "source": "apps/sdkwork-mail-flutter-mobile/packages/sdkwork_mail_flutter_mobile_commons/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork_mail_flutter_mobile_core",
+        "type": "flutter-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-flutter-mobile/packages/sdkwork_mail_flutter_mobile_core",
+        "domain": "communication",
+        "capability": "core",
+        "surface": null,
+        "languages": [
+          "dart"
+        ],
+        "source": "apps/sdkwork-mail-flutter-mobile/packages/sdkwork_mail_flutter_mobile_core/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork_mail_flutter_mobile_mail",
+        "type": "flutter-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-flutter-mobile/packages/sdkwork_mail_flutter_mobile_mail",
+        "domain": "communication",
+        "capability": "mail",
+        "surface": null,
+        "languages": [
+          "dart"
+        ],
+        "source": "apps/sdkwork-mail-flutter-mobile/packages/sdkwork_mail_flutter_mobile_mail/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork_mail_flutter_mobile_shell",
+        "type": "flutter-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-flutter-mobile/packages/sdkwork_mail_flutter_mobile_shell",
+        "domain": "communication",
+        "capability": "shell",
+        "surface": null,
+        "languages": [
+          "dart"
+        ],
+        "source": "apps/sdkwork-mail-flutter-mobile/packages/sdkwork_mail_flutter_mobile_shell/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-flutter-mobile",
+        "type": "flutter-app-root",
+        "root": "apps/sdkwork-mail-flutter-mobile",
+        "domain": "mail",
+        "capability": "mail",
+        "surface": "app",
+        "languages": [
+          "dart"
+        ],
+        "source": "apps/sdkwork-mail-flutter-mobile/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "lib/main.dart"
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [
+          {
+            "workspace": "sdkwork-mail-app-sdk"
+          }
+        ],
+        "routeManifest": null,
+        "runtimeEntrypoints": [
+          "pubspec.yaml#environment.sdk"
+        ],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-h5-admin-core",
+        "type": "react-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-h5/packages/sdkwork-mail-h5-admin-core",
+        "domain": "communication",
+        "capability": "admin-core",
+        "surface": null,
+        "languages": [
+          "typescript"
+        ],
+        "source": "apps/sdkwork-mail-h5/packages/sdkwork-mail-h5-admin-core/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [
+          {
+            "workspace": "sdkwork-mail-backend-sdk",
+            "surface": "backend-api",
+            "credentialMode": "authenticated-backend-admin"
+          }
+        ],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-h5-admin-shell",
+        "type": "react-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-h5/packages/sdkwork-mail-h5-admin-shell",
+        "domain": "communication",
+        "capability": "admin-shell",
+        "surface": null,
+        "languages": [
+          "typescript"
+        ],
+        "source": "apps/sdkwork-mail-h5/packages/sdkwork-mail-h5-admin-shell/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-h5-core",
+        "type": "react-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-h5/packages/sdkwork-mail-h5-core",
+        "domain": "communication",
+        "capability": "core",
+        "surface": null,
+        "languages": [
+          "typescript"
+        ],
+        "source": "apps/sdkwork-mail-h5/packages/sdkwork-mail-h5-core/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [
+          {
+            "workspace": "sdkwork-drive-app-sdk",
+            "surface": "app-api",
+            "credentialMode": "authenticated-app-api"
+          },
+          {
+            "workspace": "sdkwork-mail-app-sdk",
+            "surface": "app-api",
+            "credentialMode": "authenticated-app-api"
+          },
+          {
+            "workspace": "sdkwork-utils",
+            "dependencyMode": "platform-framework",
+            "surface": "open-api",
+            "credentialMode": "protected-open-api-flexible"
+          }
+        ],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-h5-Mail",
+        "type": "react-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-h5/packages/sdkwork-mail-h5-Mail",
+        "domain": "communication",
+        "capability": "mail",
+        "surface": null,
+        "languages": [
+          "typescript"
+        ],
+        "source": "apps/sdkwork-mail-h5/packages/sdkwork-mail-h5-mail/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-h5-shell",
+        "type": "react-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-h5/packages/sdkwork-mail-h5-shell",
+        "domain": "communication",
+        "capability": "shell",
+        "surface": null,
+        "languages": [
+          "typescript"
+        ],
+        "source": "apps/sdkwork-mail-h5/packages/sdkwork-mail-h5-shell/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-h5",
+        "type": "h5-app-root",
+        "root": "apps/sdkwork-mail-h5",
+        "domain": "mail",
+        "capability": "mail",
+        "surface": "app",
+        "languages": [
+          "typescript"
+        ],
+        "source": "apps/sdkwork-mail-h5/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "src/main.tsx"
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [
+          {
+            "workspace": "sdkwork-mail-app-sdk"
+          }
+        ],
+        "routeManifest": null,
+        "runtimeEntrypoints": [
+          "package.json#scripts.dev"
+        ],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-mp-core",
+        "type": "mini-program-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-mini-program/packages/sdkwork-mail-mp-core",
+        "domain": "communication",
+        "capability": "core",
+        "surface": null,
+        "languages": [
+          "typescript"
+        ],
+        "source": "apps/sdkwork-mail-mini-program/packages/sdkwork-mail-mp-core/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [
+          {
+            "workspace": "sdkwork-drive-app-sdk",
+            "surface": "app-api",
+            "credentialMode": "authenticated-app-api"
+          },
+          {
+            "workspace": "sdkwork-mail-app-sdk",
+            "surface": "app-api",
+            "credentialMode": "authenticated-app-api"
+          },
+          {
+            "workspace": "sdkwork-utils",
+            "dependencyMode": "platform-framework",
+            "surface": "open-api",
+            "credentialMode": "protected-open-api-flexible"
+          }
+        ],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-mp-host",
+        "type": "mini-program-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-mini-program/packages/sdkwork-mail-mp-host",
+        "domain": "communication",
+        "capability": "host",
+        "surface": null,
+        "languages": [
+          "typescript"
+        ],
+        "source": "apps/sdkwork-mail-mini-program/packages/sdkwork-mail-mp-host/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-mp-Mail",
+        "type": "mini-program-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-mini-program/packages/sdkwork-mail-mp-Mail",
+        "domain": "communication",
+        "capability": "mail",
+        "surface": null,
+        "languages": [
+          "typescript"
+        ],
+        "source": "apps/sdkwork-mail-mini-program/packages/sdkwork-mail-mp-mail/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-mp-shell",
+        "type": "mini-program-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-mini-program/packages/sdkwork-mail-mp-shell",
+        "domain": "communication",
+        "capability": "shell",
+        "surface": null,
+        "languages": [
+          "typescript"
+        ],
+        "source": "apps/sdkwork-mail-mini-program/packages/sdkwork-mail-mp-shell/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-mini-program",
+        "type": "mini-program-app-root",
+        "root": "apps/sdkwork-mail-mini-program",
+        "domain": "mail",
+        "capability": "mail",
+        "surface": "app",
+        "languages": [
+          "typescript"
+        ],
+        "source": "apps/sdkwork-mail-mini-program/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "src/app.js"
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [
+          {
+            "workspace": "sdkwork-mail-app-sdk"
+          }
+        ],
+        "routeManifest": null,
+        "runtimeEntrypoints": [
+          "package.json#scripts.build"
+        ],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-pc-admin-core",
+        "type": "react-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-pc/packages/sdkwork-mail-pc-admin-core",
+        "domain": "communication",
+        "capability": "admin-core",
+        "surface": null,
+        "languages": [
+          "typescript"
+        ],
+        "source": "apps/sdkwork-mail-pc/packages/sdkwork-mail-pc-admin-core/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [
+          {
+            "workspace": "sdkwork-mail-backend-sdk",
+            "surface": "backend-api",
+            "credentialMode": "authenticated-backend-admin"
+          }
+        ],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-pc-admin-shell",
+        "type": "react-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-pc/packages/sdkwork-mail-pc-admin-shell",
+        "domain": "communication",
+        "capability": "admin-shell",
+        "surface": null,
+        "languages": [
+          "typescript"
+        ],
+        "source": "apps/sdkwork-mail-pc/packages/sdkwork-mail-pc-admin-shell/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-pc-core",
+        "type": "react-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-pc/packages/sdkwork-mail-pc-core",
+        "domain": "communication",
+        "capability": "core",
+        "surface": null,
+        "languages": [
+          "typescript"
+        ],
+        "source": "apps/sdkwork-mail-pc/packages/sdkwork-mail-pc-core/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [
+          {
+            "workspace": "sdkwork-drive-app-sdk",
+            "surface": "app-api",
+            "credentialMode": "authenticated-app-api"
+          },
+          {
+            "workspace": "sdkwork-mail-app-sdk",
+            "surface": "app-api",
+            "credentialMode": "authenticated-app-api"
+          },
+          {
+            "workspace": "sdkwork-utils",
+            "dependencyMode": "platform-framework",
+            "surface": "open-api",
+            "credentialMode": "protected-open-api-flexible"
+          }
+        ],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-pc-Mail",
+        "type": "react-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-pc/packages/sdkwork-mail-pc-Mail",
+        "domain": "communication",
+        "capability": "mail",
+        "surface": null,
+        "languages": [
+          "typescript"
+        ],
+        "source": "apps/sdkwork-mail-pc/packages/sdkwork-mail-pc-mail/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [
+          "package.json#scripts.typecheck"
+        ],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-pc-shell",
+        "type": "react-package",
+        "root": "sdkwork-mail/apps/sdkwork-mail-pc/packages/sdkwork-mail-pc-shell",
+        "domain": "communication",
+        "capability": "shell",
+        "surface": null,
+        "languages": [
+          "typescript"
+        ],
+        "source": "apps/sdkwork-mail-pc/packages/sdkwork-mail-pc-shell/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-pc",
+        "type": "pc-app-root",
+        "root": "apps/sdkwork-mail-pc",
+        "domain": "mail",
+        "capability": "mail",
+        "surface": "app",
+        "languages": [
+          "typescript"
+        ],
+        "source": "apps/sdkwork-mail-pc/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "src/main.tsx"
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [
+          {
+            "workspace": "sdkwork-mail-app-sdk"
+          }
+        ],
+        "routeManifest": null,
+        "runtimeEntrypoints": [
+          "package.json#scripts.dev"
+        ],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-api-mail-assembly",
+        "type": "rust-api-assembly",
+        "root": "crates/sdkwork-api-mail-assembly",
+        "domain": "application",
+        "capability": "api-assembly",
+        "surface": "api-assembly",
+        "languages": [
+          "rust"
+        ],
+        "source": "crates/sdkwork-api-mail-assembly/specs/component.spec.json",
+        "layerRole": "runtime-composition",
+        "publicExports": [
+          "."
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": "assembly-manifest.json",
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-api-mail-standalone-gateway",
+        "type": "rust-api-standalone-gateway",
+        "root": "crates/sdkwork-api-mail-standalone-gateway",
+        "domain": "communication",
+        "capability": "api-gateway",
+        "surface": "gateway-api",
+        "languages": [
+          "rust"
+        ],
+        "source": "crates/sdkwork-api-mail-standalone-gateway/specs/component.spec.json",
+        "layerRole": "runtime-gateway",
+        "publicExports": [],
+        "providedPorts": [],
+        "requiredPorts": [
+          {
+            "name": "mailApiAssembly",
+            "export": "sdkwork_api_mail_assembly::assemble_api_router_with_bootstrap",
+            "provider": "sdkwork-api-mail-assembly"
+          }
+        ],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [
+          "src/main.rs"
+        ],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-communication-mail-repository-sqlx",
+        "type": "rust-crate",
+        "root": "sdkwork-mail/crates/sdkwork-communication-mail-repository-sqlx",
+        "domain": "communication",
+        "capability": "mail",
+        "surface": null,
+        "languages": [
+          "rust"
+        ],
+        "source": "crates/sdkwork-communication-mail-repository-sqlx/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "connect_mail_persistence_bootstrap_from_env",
+          "MailPostgresPersistencePort",
+          "MAIL_TABLES"
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [
+          "Cargo.toml"
+        ],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-communication-mail-service",
+        "type": "rust-crate",
+        "root": "sdkwork-mail/crates/sdkwork-communication-mail-service",
+        "domain": "communication",
+        "capability": "mail",
+        "surface": null,
+        "languages": [
+          "rust"
+        ],
+        "source": "crates/sdkwork-communication-mail-service/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "MailPersistencePort",
+          "MailAccount",
+          "MailMessage",
+          "MAIL_APP_API_AUTHORITY",
+          "MAIL_BACKEND_API_AUTHORITY"
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [
+          "Cargo.toml"
+        ],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-api-registry",
+        "type": "rust-crate",
+        "root": "sdkwork-mail/crates/sdkwork-mail-api-registry",
+        "domain": "communication",
+        "capability": "mail",
+        "surface": null,
+        "languages": [
+          "rust"
+        ],
+        "source": "crates/sdkwork-mail-api-registry/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "HttpMethod"
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [
+          "Cargo.toml"
+        ],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-app-context",
+        "type": "rust-crate",
+        "root": "sdkwork-mail/crates/sdkwork-mail-app-context",
+        "domain": "communication",
+        "capability": "mail",
+        "surface": null,
+        "languages": [
+          "rust"
+        ],
+        "source": "crates/sdkwork-mail-app-context/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "AppContext",
+          "app_context_from_web_request",
+          "app_context_from_web_principal"
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [
+          "Cargo.toml"
+        ],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-openapi",
+        "type": "rust-crate",
+        "root": "sdkwork-mail/crates/sdkwork-mail-openapi",
+        "domain": "communication",
+        "capability": "mail",
+        "surface": null,
+        "languages": [
+          "rust"
+        ],
+        "source": "crates/sdkwork-mail-openapi/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "build_openapi_document",
+          "extract_routes_from_function",
+          "render_docs_html"
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [
+          "Cargo.toml"
+        ],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-service-host",
+        "type": "rust-crate",
+        "root": "sdkwork-mail/crates/sdkwork-mail-service-host",
+        "domain": "communication",
+        "capability": "mail",
+        "surface": null,
+        "languages": [
+          "rust"
+        ],
+        "source": "crates/sdkwork-mail-service-host/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "MailProductService"
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [
+          "Cargo.toml"
+        ],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-routes-mail-app-api",
+        "type": "rust-crate",
+        "root": "sdkwork-mail/crates/sdkwork-routes-mail-app-api",
+        "domain": "communication",
+        "capability": "mail",
+        "surface": "app",
+        "languages": [
+          "rust"
+        ],
+        "source": "crates/sdkwork-routes-mail-app-api/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "build_sdkwork_mail_app_api_router",
+          "wrap_router_with_web_framework_from_env"
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": "sdks/_route-manifests/app-api/sdkwork-routes-mail-app-api.route-manifest.json",
+        "runtimeEntrypoints": [
+          "Cargo.toml"
+        ],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-routes-mail-backend-api",
+        "type": "rust-crate",
+        "root": "sdkwork-mail/crates/sdkwork-routes-mail-backend-api",
+        "domain": "communication",
+        "capability": "mail",
+        "surface": "backend-admin",
+        "languages": [
+          "rust"
+        ],
+        "source": "crates/sdkwork-routes-mail-backend-api/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "build_sdkwork_mail_backend_api_router",
+          "wrap_router_with_web_framework_from_env"
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": "sdks/_route-manifests/backend-api/sdkwork-routes-mail-backend-api.route-manifest.json",
+        "runtimeEntrypoints": [
+          "Cargo.toml"
+        ],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-routes-mail-common",
+        "type": "rust-crate",
+        "root": "sdkwork-mail",
+        "domain": "communication",
+        "capability": "mail",
+        "surface": null,
+        "languages": [
+          "rust"
+        ],
+        "source": "crates/sdkwork-routes-mail-common/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "crates/sdkwork-routes-mail-common/src/response.rs"
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-adapter-imap",
+        "type": "plugin",
+        "root": null,
+        "domain": "communication",
+        "capability": "mail",
+        "surface": null,
+        "languages": [
+          "rust"
+        ],
+        "source": "plugins/mail-imap/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-adapter-smtp",
+        "type": "plugin",
+        "root": null,
+        "domain": "communication",
+        "capability": "mail",
+        "surface": null,
+        "languages": [
+          "rust"
+        ],
+        "source": "plugins/mail-smtp/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-app-sdk",
+        "type": "sdk-family",
+        "root": "sdkwork-mail/sdks/sdkwork-mail-app-sdk",
+        "domain": "communication",
+        "capability": "app-sdk",
+        "surface": null,
+        "languages": [
+          "typescript",
+          "rust",
+          "java",
+          "python",
+          "go"
+        ],
+        "source": "sdks/sdkwork-mail-app-sdk/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [
+          {
+            "workspace": "sdkwork-mail-sdk",
+            "role": "provider-runtime-sdk",
+            "required": true,
+            "dependencyMode": "consumer-sdk",
+            "apiPrefix": null,
+            "generatedTransportImportPolicy": "forbidden",
+            "packageByLanguage": {
+              "typescript": "@sdkwork/mail-sdk",
+              "rust": "sdkwork-mail-sdk",
+              "java": "com.sdkwork:sdkwork-mail-sdk",
+              "python": "sdkwork-mail-sdk",
+              "go": "github.com/sdkwork/sdkwork-mail-sdk"
+            }
+          },
+          {
+            "workspace": "sdkwork-drive-app-sdk",
+            "role": "drive-media-resource-app-capability",
+            "required": true,
+            "dependencyMode": "consumer-sdk",
+            "apiPrefix": "/app/v3/api",
+            "apiAuthority": "sdkwork-drive.app",
+            "generatedTransportImportPolicy": "forbidden",
+            "packageByLanguage": {
+              "typescript": "@sdkwork/drive-app-sdk",
+              "rust": "sdkwork-drive-app-sdk",
+              "java": "com.sdkwork:sdkwork-drive-app-sdk",
+              "python": "sdkwork-drive-app-sdk",
+              "go": "github.com/sdkwork/sdkwork-drive-app-sdk"
+            }
+          }
+        ],
+        "routeManifest": null,
+        "runtimeEntrypoints": [
+          "bin/generate-sdk.mjs"
+        ],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-backend-sdk",
+        "type": "sdk-family",
+        "root": "sdkwork-mail/sdks/sdkwork-mail-backend-sdk",
+        "domain": "communication",
+        "capability": "backend-sdk",
+        "surface": null,
+        "languages": [
+          "typescript",
+          "rust",
+          "java",
+          "python",
+          "go"
+        ],
+        "source": "sdks/sdkwork-mail-backend-sdk/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [
+          {
+            "workspace": "sdkwork-mail-sdk",
+            "role": "provider-runtime-sdk",
+            "required": true,
+            "dependencyMode": "consumer-sdk",
+            "apiPrefix": null,
+            "generatedTransportImportPolicy": "forbidden",
+            "packageByLanguage": {
+              "typescript": "@sdkwork/mail-sdk",
+              "rust": "sdkwork-mail-sdk",
+              "java": "com.sdkwork:sdkwork-mail-sdk",
+              "python": "sdkwork-mail-sdk",
+              "go": "github.com/sdkwork/sdkwork-mail-sdk"
+            }
+          },
+          {
+            "workspace": "sdkwork-drive-backend-sdk",
+            "role": "drive-media-resource-backend-capability",
+            "required": true,
+            "dependencyMode": "consumer-sdk",
+            "apiPrefix": "/backend/v3/api",
+            "apiAuthority": "sdkwork-drive.backend",
+            "generatedTransportImportPolicy": "forbidden",
+            "packageByLanguage": {
+              "typescript": "@sdkwork/drive-backend-sdk",
+              "rust": "sdkwork-drive-backend-sdk",
+              "java": "com.sdkwork:sdkwork-drive-backend-sdk",
+              "python": "sdkwork-drive-backend-sdk",
+              "go": "github.com/sdkwork/sdkwork-drive-backend-sdk"
+            }
+          }
+        ],
+        "routeManifest": null,
+        "runtimeEntrypoints": [
+          "bin/generate-sdk.mjs"
+        ],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-sdk",
+        "type": "sdk-family",
+        "root": "sdkwork-mail/sdks/sdkwork-mail-sdk",
+        "domain": "mail",
+        "capability": "mail",
+        "surface": null,
+        "languages": [
+          "csharp",
+          "flutter",
+          "go",
+          "java",
+          "kotlin",
+          "python",
+          "rust",
+          "swift",
+          "typescript"
+        ],
+        "source": "sdks/sdkwork-mail-sdk/specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [],
+        "routeManifest": null,
+        "runtimeEntrypoints": [
+          "sdk-manifest.json"
+        ],
+        "dependencyApiSurfaces": []
+      },
+      {
+        "name": "sdkwork-mail-workspace",
+        "type": "app",
+        "root": "sdkwork-mail",
+        "domain": "communication",
+        "capability": "mail",
+        "surface": null,
+        "languages": [
+          "javascript",
+          "rust",
+          "typescript"
+        ],
+        "source": "specs/component.spec.json",
+        "layerRole": null,
+        "publicExports": [
+          "sdks/sdkwork-mail-sdk",
+          "sdks/sdkwork-mail-app-sdk",
+          "sdks/sdkwork-mail-backend-sdk"
+        ],
+        "providedPorts": [],
+        "requiredPorts": [],
+        "sdkDependencies": [
+          {
+            "workspace": "sdkwork-utils",
+            "role": "cross-language-utility-library",
+            "dependencyMode": "platform-framework",
+            "packages": [
+              "sdkwork-utils-rust",
+              "@sdkwork/utils"
+            ]
+          },
+          {
+            "workspace": "sdkwork-drive-app-sdk",
+            "role": "drive-media-resource-app-capability",
+            "apiAuthority": "sdkwork-drive-app-api",
+            "apiPrefix": "/app/v3/api/drive"
+          }
+        ],
+        "routeManifest": [
+          "sdks/_route-manifests/app-api/sdkwork-routes-mail-app-api.route-manifest.json",
+          "sdks/_route-manifests/backend-api/sdkwork-routes-mail-backend-api.route-manifest.json"
+        ],
+        "runtimeEntrypoints": [
+          "crates/sdkwork-api-mail-standalone-gateway/src/main.rs",
+          "package.json#scripts.verify"
+        ],
+        "dependencyApiSurfaces": [
+          {
+            "workspace": "sdkwork-mail-app-sdk",
+            "sdkFamily": "sdkwork-mail-app-sdk",
+            "apiAuthority": "sdkwork-mail-app-api",
+            "surface": "app-api",
+            "apiPrefix": "/app/v3/api/Mail"
+          },
+          {
+            "workspace": "sdkwork-mail-backend-sdk",
+            "sdkFamily": "sdkwork-mail-backend-sdk",
+            "apiAuthority": "sdkwork-mail-backend-api",
+            "surface": "backend-api",
+            "apiPrefix": "/backend/v3/api/Mail"
+          }
+        ]
+      }
+    ],
+    "frontend": {
+      "packages": [
+        {
+          "appRoot": "apps/sdkwork-mail-h5",
+          "architecture": "h5",
+          "directoryName": "sdkwork-mail-h5-admin-core",
+          "name": "@sdkwork/mail-h5-admin-core",
+          "role": "core"
+        },
+        {
+          "appRoot": "apps/sdkwork-mail-h5",
+          "architecture": "h5",
+          "directoryName": "sdkwork-mail-h5-admin-shell",
+          "name": "@sdkwork/mail-h5-admin-shell",
+          "role": "shell"
+        },
+        {
+          "appRoot": "apps/sdkwork-mail-h5",
+          "architecture": "h5",
+          "directoryName": "sdkwork-mail-h5-commons",
+          "name": "@sdkwork/mail-h5-commons",
+          "role": "commons"
+        },
+        {
+          "appRoot": "apps/sdkwork-mail-h5",
+          "architecture": "h5",
+          "directoryName": "sdkwork-mail-h5-core",
+          "name": "@sdkwork/mail-h5-core",
+          "role": "core"
+        },
+        {
+          "appRoot": "apps/sdkwork-mail-h5",
+          "architecture": "h5",
+          "directoryName": "sdkwork-mail-h5-mail",
+          "name": "@sdkwork/mail-h5-mail",
+          "role": "capability"
+        },
+        {
+          "appRoot": "apps/sdkwork-mail-h5",
+          "architecture": "h5",
+          "directoryName": "sdkwork-mail-h5-shell",
+          "name": "@sdkwork/mail-h5-shell",
+          "role": "shell"
+        },
+        {
+          "appRoot": "apps/sdkwork-mail-mini-program",
+          "architecture": "mp",
+          "directoryName": "sdkwork-mail-mp-core",
+          "name": "@sdkwork/mail-mp-core",
+          "role": "core"
+        },
+        {
+          "appRoot": "apps/sdkwork-mail-mini-program",
+          "architecture": "mp",
+          "directoryName": "sdkwork-mail-mp-host",
+          "name": "@sdkwork/mail-mp-host",
+          "role": "host"
+        },
+        {
+          "appRoot": "apps/sdkwork-mail-mini-program",
+          "architecture": "mp",
+          "directoryName": "sdkwork-mail-mp-mail",
+          "name": "@sdkwork/mail-mp-mail",
+          "role": "capability"
+        },
+        {
+          "appRoot": "apps/sdkwork-mail-mini-program",
+          "architecture": "mp",
+          "directoryName": "sdkwork-mail-mp-shell",
+          "name": "@sdkwork/mail-mp-shell",
+          "role": "shell"
+        },
+        {
+          "appRoot": "apps/sdkwork-mail-pc",
+          "architecture": "pc",
+          "directoryName": "sdkwork-mail-pc-admin-core",
+          "name": "@sdkwork/mail-pc-admin-core",
+          "role": "core"
+        },
+        {
+          "appRoot": "apps/sdkwork-mail-pc",
+          "architecture": "pc",
+          "directoryName": "sdkwork-mail-pc-admin-shell",
+          "name": "@sdkwork/mail-pc-admin-shell",
+          "role": "shell"
+        },
+        {
+          "appRoot": "apps/sdkwork-mail-pc",
+          "architecture": "pc",
+          "directoryName": "sdkwork-mail-pc-commons",
+          "name": "@sdkwork/mail-pc-commons",
+          "role": "commons"
+        },
+        {
+          "appRoot": "apps/sdkwork-mail-pc",
+          "architecture": "pc",
+          "directoryName": "sdkwork-mail-pc-core",
+          "name": "@sdkwork/mail-pc-core",
+          "role": "core"
+        },
+        {
+          "appRoot": "apps/sdkwork-mail-pc",
+          "architecture": "pc",
+          "directoryName": "sdkwork-mail-pc-mail",
+          "name": "@sdkwork/mail-pc-mail",
+          "role": "capability"
+        },
+        {
+          "appRoot": "apps/sdkwork-mail-pc",
+          "architecture": "pc",
+          "directoryName": "sdkwork-mail-pc-shell",
+          "name": "@sdkwork/mail-pc-shell",
+          "role": "shell"
+        }
+      ]
+    },
+    "rust": {
+      "crates": [
+        {
+          "packageName": "sdkwork-api-mail-assembly",
+          "manifest": "crates/sdkwork-api-mail-assembly/Cargo.toml",
+          "dependencies": [
+            "axum",
+            "tokio",
+            "sdkwork-web-bootstrap",
+            "sdkwork-web-core",
+            "anyhow",
+            "serde-json",
+            "sdkwork-database-sqlx",
+            "sdkwork-communication-mail-repository-sqlx",
+            "sdkwork-mail-adapter-smtp",
+            "sdkwork-mail-service-host",
+            "sdkwork-routes-mail-app-api",
+            "sdkwork-routes-mail-backend-api"
+          ]
+        },
+        {
+          "packageName": "sdkwork-api-mail-standalone-gateway",
+          "manifest": "crates/sdkwork-api-mail-standalone-gateway/Cargo.toml",
+          "dependencies": [
+            "sdkwork-api-mail-assembly",
+            "anyhow",
+            "axum",
+            "sdkwork-iam-web-adapter",
+            "sdkwork-web-bootstrap",
+            "sdkwork-web-core",
+            "sdkwork-database-sqlx",
+            "tokio",
+            "tracing",
+            "tracing-subscriber"
+          ]
+        },
+        {
+          "packageName": "sdkwork-communication-mail-repository-sqlx",
+          "manifest": "crates/sdkwork-communication-mail-repository-sqlx/Cargo.toml",
+          "dependencies": [
+            "sdkwork-mail-database-host",
+            "sdkwork-database-config",
+            "sdkwork-database-repository",
+            "sdkwork-database-sqlx",
+            "sdkwork-communication-mail-service",
+            "serde",
+            "serde-json",
+            "sqlx",
+            "uuid",
+            "chrono",
+            "sdkwork-utils-rust",
+            "tokio"
+          ]
+        },
+        {
+          "packageName": "sdkwork-communication-mail-service",
+          "manifest": "crates/sdkwork-communication-mail-service/Cargo.toml",
+          "dependencies": [
+            "sdkwork-utils-rust",
+            "serde",
+            "serde-json",
+            "uuid"
+          ]
+        },
+        {
+          "packageName": "sdkwork-mail-api-registry",
+          "manifest": "crates/sdkwork-mail-api-registry/Cargo.toml",
+          "dependencies": [
+            "serde"
+          ]
+        },
+        {
+          "packageName": "sdkwork-mail-app-context",
+          "manifest": "crates/sdkwork-mail-app-context/Cargo.toml",
+          "dependencies": [
+            "axum",
+            "base64",
+            "hmac",
+            "sdkwork-web-core",
+            "sha2"
+          ]
+        },
+        {
+          "packageName": "sdkwork-mail-database-host",
+          "manifest": "crates/sdkwork-mail-database-host/Cargo.toml",
+          "dependencies": [
+            "dotenvy",
+            "sdkwork-database-config",
+            "sdkwork-database-lifecycle",
+            "sdkwork-database-spi",
+            "sdkwork-database-sqlx"
+          ]
+        },
+        {
+          "packageName": "sdkwork-mail-openapi",
+          "manifest": "crates/sdkwork-mail-openapi/Cargo.toml",
+          "dependencies": [
+            "sdkwork-mail-api-registry",
+            "serde-json"
+          ]
+        },
+        {
+          "packageName": "sdkwork-mail-service-host",
+          "manifest": "crates/sdkwork-mail-service-host/Cargo.toml",
+          "dependencies": [
+            "sdkwork-communication-mail-service",
+            "sdkwork-mail-adapter-imap",
+            "sdkwork-mail-adapter-smtp",
+            "sdkwork-routes-mail-app-api",
+            "sdkwork-routes-mail-backend-api",
+            "sdkwork-utils-rust",
+            "serde",
+            "serde-json",
+            "uuid",
+            "reqwest",
+            "tokio"
+          ]
+        },
+        {
+          "packageName": "sdkwork-routes-mail-app-api",
+          "manifest": "crates/sdkwork-routes-mail-app-api/Cargo.toml",
+          "dependencies": [
+            "axum",
+            "serde",
+            "serde-json",
+            "uuid",
+            "sdkwork-iam-web-adapter",
+            "sdkwork-mail-app-context",
+            "sdkwork-communication-mail-service",
+            "sdkwork-web-axum",
+            "sdkwork-web-contract",
+            "sdkwork-web-core",
+            "sdkwork-routes-mail-common",
+            "serde",
+            "serde-json",
+            "http-body-util",
+            "tokio",
+            "tower"
+          ]
+        },
+        {
+          "packageName": "sdkwork-routes-mail-backend-api",
+          "manifest": "crates/sdkwork-routes-mail-backend-api/Cargo.toml",
+          "dependencies": [
+            "axum",
+            "serde",
+            "serde-json",
+            "uuid",
+            "sdkwork-iam-web-adapter",
+            "sdkwork-mail-app-context",
+            "sdkwork-communication-mail-service",
+            "sdkwork-web-axum",
+            "sdkwork-web-contract",
+            "sdkwork-web-core",
+            "sdkwork-routes-mail-common",
+            "serde",
+            "serde-json",
+            "http-body-util",
+            "tokio",
+            "tower"
+          ]
+        },
+        {
+          "packageName": "sdkwork-routes-mail-common",
+          "manifest": "crates/sdkwork-routes-mail-common/Cargo.toml",
+          "dependencies": [
+            "axum",
+            "serde",
+            "sdkwork-utils-rust",
+            "sdkwork-web-core"
+          ]
+        },
+        {
+          "packageName": "sdkwork-mail-adapter-imap",
+          "manifest": "plugins/mail-imap/Cargo.toml",
+          "dependencies": [
+            "async-imap",
+            "futures-util",
+            "sdkwork-communication-mail-service",
+            "sdkwork-utils-rust",
+            "tokio",
+            "tokio-rustls",
+            "webpki-roots"
+          ]
+        },
+        {
+          "packageName": "sdkwork-mail-adapter-smtp",
+          "manifest": "plugins/mail-smtp/Cargo.toml",
+          "dependencies": [
+            "lettre",
+            "sdkwork-communication-mail-service",
+            "sdkwork-utils-rust",
+            "tracing",
+            "tokio"
+          ]
+        },
+        {
+          "packageName": "mail_sdk",
+          "manifest": "sdks/sdkwork-mail-sdk/sdkwork-mail-sdk-rust/Cargo.toml",
+          "dependencies": []
+        },
+        {
+          "packageName": "Mail-sdk-provider-imap",
+          "manifest": "sdks/sdkwork-mail-sdk/sdkwork-mail-sdk-rust/providers/Mail-sdk-provider-imap/Cargo.toml",
+          "dependencies": []
+        },
+        {
+          "packageName": "Mail-sdk-provider-smtp",
+          "manifest": "sdks/sdkwork-mail-sdk/sdkwork-mail-sdk-rust/providers/Mail-sdk-provider-smtp/Cargo.toml",
+          "dependencies": []
+        }
+      ]
+    },
+    "routes": {
+      "manifests": [
+        {
+          "source": "sdks/_route-manifests/app-api/sdkwork-routes-mail-app-api.route-manifest.json",
+          "packageName": "sdkwork-routes-mail-app-api",
+          "surface": "app-api",
+          "routeCount": 11
+        },
+        {
+          "source": "sdks/_route-manifests/backend-api/sdkwork-routes-mail-backend-api.route-manifest.json",
+          "packageName": "sdkwork-routes-mail-backend-api",
+          "surface": "backend-api",
+          "routeCount": 14
+        }
+      ]
+    },
+    "runtime": {
+      "dependencyApiSurfaces": [
+        {
+          "component": "sdkwork-mail-workspace",
+          "source": "specs/component.spec.json",
+          "workspace": "sdkwork-mail-app-sdk",
+          "sdkFamily": "sdkwork-mail-app-sdk",
+          "apiAuthority": "sdkwork-mail-app-api",
+          "surface": "app-api",
+          "apiPrefix": "/app/v3/api/Mail"
+        },
+        {
+          "component": "sdkwork-mail-workspace",
+          "source": "specs/component.spec.json",
+          "workspace": "sdkwork-mail-backend-sdk",
+          "sdkFamily": "sdkwork-mail-backend-sdk",
+          "apiAuthority": "sdkwork-mail-backend-api",
+          "surface": "backend-api",
+          "apiPrefix": "/backend/v3/api/Mail"
+        }
+      ]
+    }
   },
   "env": {},
-  "requiresPlatformGatewayProcess": false,
+  "requiresPlatformApiSurface": true,
   "issues": [],
   "meta": {
     "resolver": "sdkwork-specs/tools/lib/composition-resolver.mjs",

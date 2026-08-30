@@ -115,6 +115,7 @@
       {
         "workspace": "sdkwork-utils",
         "role": "cross-language-utility-library",
+        "dependencyMode": "platform-framework",
         "packages": [
           "sdkwork-utils-rust",
           "@sdkwork/utils"
