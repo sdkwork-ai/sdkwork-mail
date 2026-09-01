@@ -1,6 +1,6 @@
 {
   "name": "@sdkwork/mail-backend-sdk",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "SDKWork composed consumer facade for @sdkwork/mail-backend-sdk.",
   "type": "module",
   "private": false,
