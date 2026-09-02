@@ -6,7 +6,7 @@ use sdkwork_iam_web_adapter::{
     iam_web_request_context_resolver_from_database_pool_for_audiences,
     iam_web_request_context_resolver_from_env,
 };
-use sdkwork_web_bootstrap::{ComposedApiAssembly, infra_public_path_prefixes};
+use sdkwork_web_bootstrap::{ApiModuleRegistry, ComposedApiAssembly, infra_public_path_prefixes};
 use sdkwork_web_core::{RateLimitPolicy, SecurityPolicy};
 
 const APPLICATION_ID: &str = "sdkwork-mail";
@@ -74,7 +74,10 @@ async fn main() -> anyhow::Result<()> {
                 environment,
             )));
     }
-    let app = ComposedApiAssembly::try_compose("SDKWork Mail API", vec![contribution])
+    let mut module_registry = ApiModuleRegistry::new();
+    module_registry.add_modules(vec![contribution]);
+    let app = module_registry
+        .try_compose("SDKWork Mail API")
         .map_err(anyhow::Error::msg)?
         .into_hosted(framework)
         .router;
