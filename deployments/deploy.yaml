@@ -28,6 +28,10 @@ profiles:
         tls: dtupay.com
         mode: web+api
         web: adaptive
+      - domain: mail-test.noaper.com
+        tls: noaper.com
+        mode: web+api
+        web: adaptive
       - domain: mail-test.sdkwork.cn
         tls: sdkwork.cn
         mode: web+api
@@ -38,6 +42,10 @@ profiles:
         web: adaptive
       - domain: mail-test.dtupay.cn
         tls: dtupay.cn
+        mode: web+api
+        web: adaptive
+      - domain: mail-test.noaper.cn
+        tls: noaper.cn
         mode: web+api
         web: adaptive
       - domain: mail-test.skubc.com
@@ -108,6 +116,10 @@ profiles:
         tls: dtupay.com
         mode: web+api
         web: adaptive
+      - domain: mail-staging.noaper.com
+        tls: noaper.com
+        mode: web+api
+        web: adaptive
       - domain: mail-staging.sdkwork.cn
         tls: sdkwork.cn
         mode: web+api
@@ -118,6 +130,10 @@ profiles:
         web: adaptive
       - domain: mail-staging.dtupay.cn
         tls: dtupay.cn
+        mode: web+api
+        web: adaptive
+      - domain: mail-staging.noaper.cn
+        tls: noaper.cn
         mode: web+api
         web: adaptive
       - domain: mail-staging.skubc.com
@@ -188,6 +204,10 @@ profiles:
         tls: dtupay.com
         mode: web+api
         web: adaptive
+      - domain: mail.noaper.com
+        tls: noaper.com
+        mode: web+api
+        web: adaptive
       - domain: mail.sdkwork.cn
         tls: sdkwork.cn
         mode: web+api
@@ -198,6 +218,10 @@ profiles:
         web: adaptive
       - domain: mail.dtupay.cn
         tls: dtupay.cn
+        mode: web+api
+        web: adaptive
+      - domain: mail.noaper.cn
+        tls: noaper.cn
         mode: web+api
         web: adaptive
       - domain: mail.skubc.com
@@ -268,6 +292,10 @@ profiles:
         mode: web
         web: adaptive
         domain: mail.dtupay.com
+      - tls: noaper.com
+        mode: web
+        web: adaptive
+        domain: mail.noaper.com
       - tls: sdkwork.cn
         mode: web
         web: adaptive
@@ -280,6 +308,10 @@ profiles:
         mode: web
         web: adaptive
         domain: mail.dtupay.cn
+      - tls: noaper.cn
+        mode: web
+        web: adaptive
+        domain: mail.noaper.cn
       - tls: skubc.com
         mode: web
         web: adaptive
