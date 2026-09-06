@@ -51,7 +51,6 @@
         "x-sdkwork-owner": "sdkwork-mail",
         "x-sdkwork-api-authority": "sdkwork-mail-app-api",
         "x-sdkwork-source-route-crate": "sdkwork-routes-mail-app-api",
-        "x-sdkwork-permission": "mail.accounts.read",
         "x-sdkwork-auth-mode": "dual-token",
         "responses": {
           "200": {
@@ -135,7 +134,6 @@
         "x-sdkwork-owner": "sdkwork-mail",
         "x-sdkwork-api-authority": "sdkwork-mail-app-api",
         "x-sdkwork-source-route-crate": "sdkwork-routes-mail-app-api",
-        "x-sdkwork-permission": "mail.folders.read",
         "x-sdkwork-auth-mode": "dual-token",
         "parameters": [
           {
@@ -229,7 +227,6 @@
         "x-sdkwork-owner": "sdkwork-mail",
         "x-sdkwork-api-authority": "sdkwork-mail-app-api",
         "x-sdkwork-source-route-crate": "sdkwork-routes-mail-app-api",
-        "x-sdkwork-permission": "mail.threads.read",
         "x-sdkwork-auth-mode": "dual-token",
         "parameters": [
           {
@@ -323,7 +320,6 @@
         "x-sdkwork-owner": "sdkwork-mail",
         "x-sdkwork-api-authority": "sdkwork-mail-app-api",
         "x-sdkwork-source-route-crate": "sdkwork-routes-mail-app-api",
-        "x-sdkwork-permission": "mail.messages.read",
         "x-sdkwork-auth-mode": "dual-token",
         "parameters": [
           {
@@ -434,7 +430,6 @@
         "x-sdkwork-owner": "sdkwork-mail",
         "x-sdkwork-api-authority": "sdkwork-mail-app-api",
         "x-sdkwork-source-route-crate": "sdkwork-routes-mail-app-api",
-        "x-sdkwork-permission": "mail.messages.write",
         "x-sdkwork-auth-mode": "dual-token",
         "requestBody": {
           "required": true,
@@ -498,7 +493,6 @@
         "x-sdkwork-owner": "sdkwork-mail",
         "x-sdkwork-api-authority": "sdkwork-mail-app-api",
         "x-sdkwork-source-route-crate": "sdkwork-routes-mail-app-api",
-        "x-sdkwork-permission": "mail.messages.read",
         "x-sdkwork-auth-mode": "dual-token",
         "parameters": [
           {
@@ -560,7 +554,6 @@
         "x-sdkwork-owner": "sdkwork-mail",
         "x-sdkwork-api-authority": "sdkwork-mail-app-api",
         "x-sdkwork-source-route-crate": "sdkwork-routes-mail-app-api",
-        "x-sdkwork-permission": "mail.messages.write",
         "x-sdkwork-auth-mode": "dual-token",
         "parameters": [
           {
@@ -632,7 +625,6 @@
         "x-sdkwork-owner": "sdkwork-mail",
         "x-sdkwork-api-authority": "sdkwork-mail-app-api",
         "x-sdkwork-source-route-crate": "sdkwork-routes-mail-app-api",
-        "x-sdkwork-permission": "mail.messages.write",
         "x-sdkwork-auth-mode": "dual-token",
         "parameters": [
           {
@@ -666,7 +658,6 @@
         "x-sdkwork-owner": "sdkwork-mail",
         "x-sdkwork-api-authority": "sdkwork-mail-app-api",
         "x-sdkwork-source-route-crate": "sdkwork-routes-mail-app-api",
-        "x-sdkwork-permission": "mail.verification.write",
         "x-sdkwork-auth-mode": "dual-token",
         "requestBody": {
           "required": true,
@@ -730,7 +721,6 @@
         "x-sdkwork-owner": "sdkwork-mail",
         "x-sdkwork-api-authority": "sdkwork-mail-app-api",
         "x-sdkwork-source-route-crate": "sdkwork-routes-mail-app-api",
-        "x-sdkwork-permission": "mail.verification.write",
         "x-sdkwork-auth-mode": "dual-token",
         "requestBody": {
           "required": true,
@@ -794,7 +784,6 @@
         "x-sdkwork-owner": "sdkwork-mail",
         "x-sdkwork-api-authority": "sdkwork-mail-app-api",
         "x-sdkwork-source-route-crate": "sdkwork-routes-mail-app-api",
-        "x-sdkwork-permission": "mail.transactional.write",
         "x-sdkwork-auth-mode": "dual-token",
         "requestBody": {
           "required": true,
