@@ -1,9 +1,9 @@
 {
-  "environment": "development",
-  "deploymentProfile": "cloud",
-  "profileId": "cloud.development",
+  "environment": "demo",
+  "deploymentProfile": "standalone",
+  "profileId": "standalone.demo",
   "runtimeTarget": "browser",
-  "browserOriginMode": "cross-origin",
+  "browserOriginMode": "same-origin",
   "Mail": {
     "apiBaseUrl": "http://127.0.0.1:18090/app/v3/api",
     "backendApiBaseUrl": "http://127.0.0.1:18090/backend/v3/api",
@@ -13,13 +13,6 @@
   "appbase": {
     "loginUrl": "http://127.0.0.1:3900"
   },
-  "appApiBaseUrl": "http://127.0.0.1:3900",
-  "backendApiBaseUrl": "http://127.0.0.1:3900",
-  "driveAppApiBaseUrl": "http://127.0.0.1:3900",
-  "appbaseAppApiBaseUrl": "http://127.0.0.1:3900",
-  "deployAppApiBaseUrl": "http://127.0.0.1:3900",
-  "openApiBaseUrl": "http://127.0.0.1:3900",
-  "sdkBaseUrl": "http://127.0.0.1:3900",
   "cloudApiBaseUrls": [
     "https://api-dev.sdkwork.com",
     "https://api-dev.birdcoder.com",
@@ -37,5 +30,12 @@
     "https://api-dev.offer86.cn",
     "https://api-dev.86offer.com",
     "https://api-dev.86offer.cn"
-  ]
+  ],
+  "appApiBaseUrl": "/",
+  "backendApiBaseUrl": "/",
+  "driveAppApiBaseUrl": "/",
+  "appbaseAppApiBaseUrl": "/",
+  "deployAppApiBaseUrl": "/",
+  "openApiBaseUrl": "/",
+  "sdkBaseUrl": "/"
 }
