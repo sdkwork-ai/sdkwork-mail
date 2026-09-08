@@ -28,7 +28,7 @@
     "@sdkwork/mail-pc-core": "workspace:*",
     "@sdkwork/mail-pc-mail": "workspace:*",
     "@sdkwork/mail-pc-shell": "workspace:*",
-    "@sdkwork/sdk-common": "^1.0.2",
+    "@sdkwork/sdk-common": "workspace:*",
     "@tailwindcss/vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",

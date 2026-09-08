@@ -1,3 +1,5 @@
+import { splitBaseUrls } from "@sdkwork/sdk-common";
+
 export interface MailEnvironment {
   apiBaseUrl: string;
   appbaseLoginUrl: string;
@@ -13,7 +15,10 @@ const defaultEnvironment: MailEnvironment = {
 };
 
 function normalizeBaseUrl(value: string | undefined, fallback: string): string {
-  const normalized = String(value ?? "").trim();
+  // Mini programs have no `window.location`, so the base url is injected by the
+  // host. A comma/semicolon separated list of candidates is accepted and the
+  // first one wins.
+  const [normalized] = splitBaseUrls(String(value ?? "").trim());
   return normalized || fallback;
 }
 
@@ -43,10 +48,13 @@ export function resolveEnvironment(): MailEnvironment {
 }
 
 export function saveRuntimeEnvironment(config: Partial<MailEnvironment>): MailEnvironment {
-  const next = {
+  const next: MailEnvironment = {
     ...resolveEnvironment(),
     ...config,
   };
+  if (config.apiBaseUrl !== undefined) {
+    next.apiBaseUrl = normalizeBaseUrl(config.apiBaseUrl, defaultEnvironment.apiBaseUrl);
+  }
   const wxStorage = (globalThis as { wx?: { setStorageSync(key: string, value: unknown): void } }).wx;
   wxStorage?.setStorageSync?.(RUNTIME_CONFIG_KEY, next);
   return next;

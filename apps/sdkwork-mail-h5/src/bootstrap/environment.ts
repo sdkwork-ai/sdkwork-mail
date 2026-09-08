@@ -1,3 +1,5 @@
+import { resolveBaseUrl } from "@sdkwork/sdk-common";
+
 export interface MailEnvironment {
   apiBaseUrl: string;
   appbaseAppApiBaseUrl: string;
@@ -11,38 +13,31 @@ export interface MailEnvironment {
   };
 }
 
+const API_BASE_URL_ENV_KEY = "SDKWORK_API_BASE_URL";
+
 function normalizeBaseUrl(value: string | undefined, fallback: string): string {
   const normalized = String(value ?? "").trim();
   return normalized || fallback;
 }
 
-function deriveAppApiBaseUrl(applicationPublicHttpUrl: string): string {
-  return `${applicationPublicHttpUrl.replace(/\/+$/u, "")}/app/v3/api`;
-}
-
-function deriveBackendApiBaseUrl(applicationPublicHttpUrl: string): string {
-  return `${applicationPublicHttpUrl.replace(/\/+$/u, "")}/backend/v3/api`;
+function deriveBackendApiBaseUrl(apiOrigin: string): string {
+  return `${apiOrigin.replace(/\/+$/u, "")}/backend/v3/api`;
 }
 
 export function resolveEnvironment(): MailEnvironment {
-  const applicationPublicHttpUrl = normalizeBaseUrl(
-    import.meta.env.VITE_sdkwork_mail_H5_APPLICATION_PUBLIC_HTTP_URL,
-    "http://127.0.0.1:18090",
-  );
+  // Single shared base-url key. `preservePath` keeps the `/app/v3/api` path
+  // configured through SDKWORK_API_BASE_URL; the backend surface reuses the
+  // same API origin with its own `/backend/v3/api` path.
+  const appApiBaseUrl = resolveBaseUrl({
+    envKey: API_BASE_URL_ENV_KEY,
+    preservePath: true,
+  }).url;
+  const apiOrigin = resolveBaseUrl({ envKey: API_BASE_URL_ENV_KEY }).url;
 
   return {
-    apiBaseUrl: normalizeBaseUrl(
-      import.meta.env.VITE_sdkwork_mail_H5_APP_API_BASE_URL,
-      deriveAppApiBaseUrl(applicationPublicHttpUrl),
-    ),
-    appbaseAppApiBaseUrl: normalizeBaseUrl(
-      import.meta.env.VITE_sdkwork_mail_H5_APPBASE_APP_API_BASE_URL,
-      deriveAppApiBaseUrl(applicationPublicHttpUrl),
-    ),
-    backendApiBaseUrl: normalizeBaseUrl(
-      import.meta.env.VITE_sdkwork_mail_H5_BACKEND_API_BASE_URL,
-      deriveBackendApiBaseUrl(applicationPublicHttpUrl),
-    ),
+    apiBaseUrl: appApiBaseUrl,
+    appbaseAppApiBaseUrl: appApiBaseUrl,
+    backendApiBaseUrl: deriveBackendApiBaseUrl(apiOrigin),
     appbaseLoginUrl: normalizeBaseUrl(
       import.meta.env.VITE_sdkwork_mail_H5_APPBASE_LOGIN_URL,
       "http://127.0.0.1:3900",
