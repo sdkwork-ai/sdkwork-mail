@@ -1,4 +1,4 @@
-import { resolveBaseUrl } from "@sdkwork/sdk-common";
+import {resolveBaseUrlWithAlignProtocol} from "@sdkwork/sdk-common";
 
 export interface MailEnvironment {
   apiBaseUrl: string;
@@ -24,11 +24,11 @@ export function resolveEnvironment(): MailEnvironment {
   // Single shared base-url key. `preservePath` keeps the `/app/v3/api` path
   // configured through SDKWORK_API_BASE_URL; the backend surface reuses the
   // same API origin with its own `/backend/v3/api` path.
-  const appApiBaseUrl = resolveBaseUrl({
+  const appApiBaseUrl = resolveBaseUrlWithAlignProtocol({
     envKey: API_BASE_URL_ENV_KEY,
     preservePath: true,
   }).url;
-  const apiOrigin = resolveBaseUrl({ envKey: API_BASE_URL_ENV_KEY }).url;
+  const apiOrigin = resolveBaseUrlWithAlignProtocol({ envKey: API_BASE_URL_ENV_KEY }).url;
 
   return {
     apiBaseUrl: appApiBaseUrl,
@@ -36,7 +36,7 @@ export function resolveEnvironment(): MailEnvironment {
     backendApiBaseUrl: deriveBackendApiBaseUrl(apiOrigin),
     appbaseLoginUrl: normalizeBaseUrl(
       import.meta.env.VITE_sdkwork_mail_PC_APPBASE_LOGIN_URL,
-      "http://127.0.0.1:3900",
+      resolveBaseUrlWithAlignProtocol().url,
     ),
     defaultMediaMode: "video",
     providerSelection: "auto",

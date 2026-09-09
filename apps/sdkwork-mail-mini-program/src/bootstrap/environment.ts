@@ -1,4 +1,4 @@
-import { splitBaseUrls } from "@sdkwork/sdk-common";
+import {resolveBaseUrlWithAlignProtocol, splitBaseUrls} from "@sdkwork/sdk-common";
 
 export interface MailEnvironment {
   apiBaseUrl: string;
@@ -7,19 +7,24 @@ export interface MailEnvironment {
 }
 
 const RUNTIME_CONFIG_KEY = "sdkwork.Mail.runtime.config";
+const DEFAULT_MEDIA_MODE = "video";
 
-const defaultEnvironment: MailEnvironment = {
-  apiBaseUrl: "http://127.0.0.1:18090/app/v3/api",
-  appbaseLoginUrl: "http://127.0.0.1:3900",
-  defaultMediaMode: "video",
-};
+function resolveDefaultApiBaseUrl(): string {
+  // `preservePath` keeps the `/app/v3/api` path configured through
+  // SDKWORK_API_BASE_URL.
+  return resolveBaseUrlWithAlignProtocol({ preservePath: true }).url;
+}
 
-function normalizeBaseUrl(value: string | undefined, fallback: string): string {
-  // Mini programs have no `window.location`, so the base url is injected by the
+function resolveDefaultAppbaseLoginUrl(): string {
+  return resolveBaseUrlWithAlignProtocol().url;
+}
+
+function normalizeBaseUrl(value: string | undefined, fallback: () => string): string {
+  // Mini programs have no browser location, so the base url is injected by the
   // host. A comma/semicolon separated list of candidates is accepted and the
   // first one wins.
   const [normalized] = splitBaseUrls(String(value ?? "").trim());
-  return normalized || fallback;
+  return normalized || fallback();
 }
 
 function readStoredRuntimeConfig(): Partial<MailEnvironment> {
@@ -41,9 +46,12 @@ function readStoredRuntimeConfig(): Partial<MailEnvironment> {
 export function resolveEnvironment(): MailEnvironment {
   const stored = readStoredRuntimeConfig();
   return {
-    apiBaseUrl: normalizeBaseUrl(stored.apiBaseUrl, defaultEnvironment.apiBaseUrl),
-    appbaseLoginUrl: normalizeBaseUrl(stored.appbaseLoginUrl, defaultEnvironment.appbaseLoginUrl),
-    defaultMediaMode: stored.defaultMediaMode ?? defaultEnvironment.defaultMediaMode,
+    apiBaseUrl: normalizeBaseUrl(stored.apiBaseUrl, resolveDefaultApiBaseUrl),
+    appbaseLoginUrl: normalizeBaseUrl(
+      stored.appbaseLoginUrl,
+      resolveDefaultAppbaseLoginUrl,
+    ),
+    defaultMediaMode: stored.defaultMediaMode ?? DEFAULT_MEDIA_MODE,
   };
 }
 
@@ -53,7 +61,7 @@ export function saveRuntimeEnvironment(config: Partial<MailEnvironment>): MailEn
     ...config,
   };
   if (config.apiBaseUrl !== undefined) {
-    next.apiBaseUrl = normalizeBaseUrl(config.apiBaseUrl, defaultEnvironment.apiBaseUrl);
+    next.apiBaseUrl = normalizeBaseUrl(config.apiBaseUrl, resolveDefaultApiBaseUrl);
   }
   const wxStorage = (globalThis as { wx?: { setStorageSync(key: string, value: unknown): void } }).wx;
   wxStorage?.setStorageSync?.(RUNTIME_CONFIG_KEY, next);

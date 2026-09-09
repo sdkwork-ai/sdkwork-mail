@@ -1,4 +1,4 @@
-import { resolveBaseUrl, splitBaseUrls } from "@sdkwork/sdk-common";
+import {resolveBaseUrlWithAlignProtocol, splitBaseUrls} from "@sdkwork/sdk-common";
 
 const APP_API_PREFIX = "/app/v3/api";
 const API_BASE_URL_ENV_KEY = "SDKWORK_API_BASE_URL";
@@ -34,7 +34,7 @@ function normalizeApiBaseUrl(apiBaseUrl: string): string {
  */
 export function resolveAppSdkBaseUrl(apiBaseUrl?: string): string {
   const [configured = ""] = splitBaseUrls(
-    apiBaseUrl ?? resolveBaseUrl({ envKey: API_BASE_URL_ENV_KEY }).url,
+    apiBaseUrl ?? resolveBaseUrlWithAlignProtocol({ envKey: API_BASE_URL_ENV_KEY }).url,
   );
   return normalizeApiBaseUrl(configured);
 }
