@@ -103,5 +103,13 @@
   "generatorName": "@sdkwork/sdk-generator",
   "generatorEntryPoint": "E:\\sdkwork-space\\sdkwork-sdk-generator\\bin\\sdkgen.js",
   "standardProfile": "sdkwork-v3",
-  "ownerOnlyOperationCount": 11
+  "ownerOnlyOperationCount": 11,
+  "packageName": "@sdkwork/mail-app-sdk",
+  "transportPackageName": "sdkwork-mail-app-sdk-generated-typescript",
+  "typescript": {
+    "composedRoot": "sdkwork-mail-app-sdk-typescript",
+    "composedEntry": "sdkwork-mail-app-sdk-typescript/src/index.ts",
+    "transportRoot": "sdkwork-mail-app-sdk-typescript/generated/server-openapi",
+    "transportEntry": "sdkwork-mail-app-sdk-typescript/generated/server-openapi/src/index.ts"
+  }
 }

@@ -1,9 +1,13 @@
 [package]
+rust-version.workspace = true
 name = "sdkwork-mail-adapter-imap"
 edition.workspace = true
 license.workspace = true
 version.workspace = true
 
+
+[lints]
+workspace = true
 [dependencies]
 async-imap = { version = "0.10.4", default-features = false, features = ["runtime-tokio"] }
 futures-util = "0.3.31"

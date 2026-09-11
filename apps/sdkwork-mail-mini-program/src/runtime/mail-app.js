@@ -3378,7 +3378,7 @@ var CURRENCY_NAMES = {
 var DEFAULT_LOCALE_RULES = LOCALE_RULES["en-us"];
 var DEFAULT_CURRENCY_NAMES = CURRENCY_NAMES["en-us"];
 
-// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/generated/server-openapi/src/http/client.ts
+// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/src/index.ts/http/client.ts
 var _HttpClient = class _HttpClient extends BaseHttpClient {
   constructor(config) {
     super(config);
@@ -3853,7 +3853,7 @@ function createHttpClient(config) {
   return new HttpClient(config);
 }
 
-// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/generated/server-openapi/src/api/paths.ts
+// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/src/index.ts/api/paths.ts
 var APP_API_PREFIX2 = "/app/v3/api";
 function appApiPath(path) {
   if (!path) {
@@ -3874,7 +3874,7 @@ function appApiPath(path) {
   return `${normalizedPrefix}${normalizedPath}`;
 }
 
-// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/generated/server-openapi/src/api/mail-accounts.ts
+// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/src/index.ts/api/mail-accounts.ts
 var MailAccountsMailAccountsApi = class {
   constructor(client) {
     __publicField(this, "client");
@@ -3900,7 +3900,7 @@ function createMailAccountsApi(client) {
   return new MailAccountsApi(client);
 }
 
-// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/generated/server-openapi/src/api/mail-folders.ts
+// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/src/index.ts/api/mail-folders.ts
 var MailFoldersMailFoldersApi = class {
   constructor(client) {
     __publicField(this, "client");
@@ -4024,7 +4024,7 @@ function encodeQueryValue(value, allowReserved) {
   return encoded.replace(/%3A/gi, ":").replace(/%2F/gi, "/").replace(/%3F/gi, "?").replace(/%23/gi, "#").replace(/%5B/gi, "[").replace(/%5D/gi, "]").replace(/%40/gi, "@").replace(/%21/gi, "!").replace(/%24/gi, "$").replace(/%26/gi, "&").replace(/%27/gi, "'").replace(/%28/gi, "(").replace(/%29/gi, ")").replace(/%2A/gi, "*").replace(/%2B/gi, "+").replace(/%2C/gi, ",").replace(/%3B/gi, ";").replace(/%3D/gi, "=");
 }
 
-// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/generated/server-openapi/src/api/mail-threads.ts
+// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/src/index.ts/api/mail-threads.ts
 var MailThreadsMailThreadsApi = class {
   constructor(client) {
     __publicField(this, "client");
@@ -4148,7 +4148,7 @@ function encodeQueryValue2(value, allowReserved) {
   return encoded.replace(/%3A/gi, ":").replace(/%2F/gi, "/").replace(/%3F/gi, "?").replace(/%23/gi, "#").replace(/%5B/gi, "[").replace(/%5D/gi, "]").replace(/%40/gi, "@").replace(/%21/gi, "!").replace(/%24/gi, "$").replace(/%26/gi, "&").replace(/%27/gi, "'").replace(/%28/gi, "(").replace(/%29/gi, ")").replace(/%2A/gi, "*").replace(/%2B/gi, "+").replace(/%2C/gi, ",").replace(/%3B/gi, ";").replace(/%3D/gi, "=");
 }
 
-// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/generated/server-openapi/src/api/mail-messages.ts
+// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/src/index.ts/api/mail-messages.ts
 var MailMessagesMailMessagesApi = class {
   constructor(client) {
     __publicField(this, "client");
@@ -4337,7 +4337,7 @@ function encodeQueryValue3(value, allowReserved) {
   return encoded.replace(/%3A/gi, ":").replace(/%2F/gi, "/").replace(/%3F/gi, "?").replace(/%23/gi, "#").replace(/%5B/gi, "[").replace(/%5D/gi, "]").replace(/%40/gi, "@").replace(/%21/gi, "!").replace(/%24/gi, "$").replace(/%26/gi, "&").replace(/%27/gi, "'").replace(/%28/gi, "(").replace(/%29/gi, ")").replace(/%2A/gi, "*").replace(/%2B/gi, "+").replace(/%2C/gi, ",").replace(/%3B/gi, ";").replace(/%3D/gi, "=");
 }
 
-// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/generated/server-openapi/src/api/mail-verification.ts
+// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/src/index.ts/api/mail-verification.ts
 var MailVerificationMailVerificationApi = class {
   constructor(client) {
     __publicField(this, "client");
@@ -4366,7 +4366,7 @@ function createMailVerificationApi(client) {
   return new MailVerificationApi(client);
 }
 
-// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/generated/server-openapi/src/api/mail-transactional.ts
+// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/src/index.ts/api/mail-transactional.ts
 var MailTransactionalMailTransactionalApi = class {
   constructor(client) {
     __publicField(this, "client");
@@ -4392,7 +4392,7 @@ function createMailTransactionalApi(client) {
   return new MailTransactionalApi(client);
 }
 
-// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/generated/server-openapi/src/sdk.ts
+// ../../sdks/sdkwork-mail-app-sdk/sdkwork-mail-app-sdk-typescript/src/index.ts/sdk.ts
 var SdkworkAppClient = class {
   constructor(config) {
     __publicField(this, "httpClient");

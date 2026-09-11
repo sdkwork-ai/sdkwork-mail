@@ -1,10 +1,14 @@
 [package]
+rust-version.workspace = true
 name = "sdkwork-api-mail-assembly"
 edition.workspace = true
 license.workspace = true
 version.workspace = true
 description = "Generated API assembly for sdkwork-mail application HTTP plane."
 
+
+[lints]
+workspace = true
 [lib]
 name = "sdkwork_api_mail_assembly"
 path = "src/lib.rs"

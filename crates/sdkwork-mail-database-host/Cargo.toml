@@ -1,10 +1,14 @@
 [package]
+rust-version.workspace = true
 name = "sdkwork-mail-database-host"
 edition.workspace = true
 version.workspace = true
 license.workspace = true
 description = "SDKWork Mail database lifecycle bootstrap."
 
+
+[lints]
+workspace = true
 [lib]
 name = "sdkwork_mail_database_host"
 path = "src/lib.rs"

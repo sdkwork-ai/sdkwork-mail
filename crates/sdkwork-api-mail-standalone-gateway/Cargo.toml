@@ -1,4 +1,5 @@
 [package]
+rust-version.workspace = true
 name = "sdkwork-api-mail-standalone-gateway"
 version.workspace = true
 edition.workspace = true
@@ -8,6 +9,9 @@ license.workspace = true
 name = "sdkwork-api-mail-standalone-gateway"
 path = "src/main.rs"
 
+
+[lints]
+workspace = true
 [dependencies]
 sdkwork_api_mail_assembly.workspace = true
 anyhow = "1.0.98"

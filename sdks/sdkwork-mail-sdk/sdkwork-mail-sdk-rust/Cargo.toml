@@ -1,4 +1,5 @@
 [package]
+rust-version.workspace = true
 name = "mail_sdk"
 version = "0.1.0"
 edition = "2021"
@@ -6,7 +7,29 @@ description = "Reserved Rust package scaffold for mail_sdk with build system: ca
 license = "UNLICENSED"
 publish = false
 
+
+[lints]
+workspace = true
 [lib]
 path = "src/lib.rs"
 
 [workspace]
+
+
+[workspace.package]
+edition = "2021"
+rust-version = "1.85"
+[workspace.lints.rust]
+# RUST_CODE_SPEC.md section 13 baseline.
+# Deny-tier lints (unsafe_code, panic, unwrap_used, expect_used, pedantic) are
+# promoted per crate together with their cleanup: enabling them fleet-wide
+# today floods or fails builds that have not paid that debt yet.
+unsafe_op_in_unsafe_fn = "warn"
+trivial_casts = "warn"
+trivial_numeric_casts = "warn"
+
+[workspace.lints.clippy]
+dbg_macro = "warn"
+todo = "warn"
+unimplemented = "warn"
+exit = "warn"
