@@ -101,7 +101,7 @@
     }
   ],
   "generatorName": "@sdkwork/sdk-generator",
-  "generatorEntryPoint": "E:\\sdkwork-space\\sdkwork-sdk-generator\\bin\\sdkgen.js",
+  "generatorEntryPoint": "../sdkwork-sdk-generator/bin/sdkgen.js",
   "standardProfile": "sdkwork-v3",
   "ownerOnlyOperationCount": 11,
   "packageName": "@sdkwork/mail-app-sdk",

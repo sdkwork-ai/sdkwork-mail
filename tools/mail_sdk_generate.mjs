@@ -17,6 +17,16 @@ const DEFAULT_LANGUAGE = "typescript";
 const STANDARD_PROFILE = "sdkwork-v3";
 const GENERATOR_BIN = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..", "sdkwork-sdk-generator", "bin", "sdkgen.js");
 
+// `GENERATOR_BIN` is a live absolute path, correct at runtime on any machine.
+// Committed manifests must not freeze the generating machine's drive letter
+// into the repository, and nothing reads `generatorEntryPoint` back, so the
+// manifest records it repository-relative — the same convention the sibling
+// `sdk-manifest.json` files use.
+const GENERATOR_ENTRYPOINT_RELATIVE = path
+  .relative(path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."), GENERATOR_BIN)
+  .split(path.sep)
+  .join("/");
+
 const workspaceRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 const providerRuntimeSdkDependency = {
@@ -400,7 +410,7 @@ function syncFamily(family) {
     languages: languageEntries(family),
     sdkDependencies: family.sdkDependencies,
     generatorName: "@sdkwork/sdk-generator",
-    generatorEntryPoint: GENERATOR_BIN,
+    generatorEntryPoint: GENERATOR_ENTRYPOINT_RELATIVE,
     standardProfile: STANDARD_PROFILE,
     ownerOnlyOperationCount: operations.length,
   });
