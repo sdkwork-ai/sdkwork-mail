@@ -57,3 +57,7 @@ Thumbs.db
 **/public/runtime-env.json
 
 # Build artifacts
+
+# Gradle local build output (do not commit)
+.gradle/
+build/
