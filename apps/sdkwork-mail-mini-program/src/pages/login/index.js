@@ -2,7 +2,7 @@ const { SESSION_STORAGE_KEY } = require("../../constants/sessionStorageKey");
 
 Page({
   data: {
-    accessToken: "dev-access-token",
+    accessToken: "",
     userId: "1",
   },
   onAccessTokenInput(event) {

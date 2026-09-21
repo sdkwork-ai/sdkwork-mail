@@ -10,14 +10,11 @@
   "dependencies": {
     "@sdkwork/mail-app-sdk": "workspace:*",
     "@sdkwork/mail-mp-core": "workspace:*",
-    "@sdkwork/mail-mp-core": "workspace:*",
-    "@sdkwork/mail-mp-host": "workspace:*",
     "@sdkwork/mail-mp-host": "workspace:*",
     "@sdkwork/mail-mp-mail": "workspace:*",
-    "@sdkwork/mail-mp-mail": "workspace:*",
     "@sdkwork/mail-mp-shell": "workspace:*",
-    "@sdkwork/mail-mp-shell": "workspace:*",
-    "@sdkwork/sdk-common": "workspace:*"
+    "@sdkwork/sdk-common": "workspace:*",
+    "@sdkwork/iam-credential-entry": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^25.9.2",

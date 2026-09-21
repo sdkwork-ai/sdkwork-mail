@@ -18,8 +18,8 @@ const defaultAdminPermissionScope =
     'mail.templates.read mail.templates.write mail.messages.read mail.provider_accounts.read mail.provider_accounts.write mail.marketing_consents.read mail.marketing_consents.write';
 
 const defaultAdminSession = MailAdminSession(
-  accessToken: 'dev-access-token',
-  authToken: 'dev-auth-token',
+  accessToken: '',
+  authToken: '',
   tenantId: 'default',
   organizationId: 'default',
   userId: 'admin',

@@ -1,3 +1,4 @@
+import { readBootstrapAccessTokenFromProcessEnv } from '@sdkwork/iam-credential-entry';
 import {
   createTokenManager,
   setTokenManager,
@@ -17,8 +18,8 @@ const LEGACY_mail_ADMIN_SESSION_STORAGE_KEY = "sdkwork.Mail.admin.session";
 export const DEFAULT_ADMIN_PERMISSION_SCOPE = "Mail.*";
 
 export const DEFAULT_ADMIN_SESSION: MailAdminSession = {
-  accessToken: "dev-access-token",
-  authToken: "dev-auth-token",
+  accessToken: "",
+  authToken: "",
   tenantId: "100001",
   organizationId: "0",
   userId: "1",
@@ -106,7 +107,11 @@ export function buildAdminSdkHeaders(session: MailAdminSession): Record<string, 
 }
 
 export function createAdminTokenManager(session: MailAdminSession): AuthTokenManager {
-  return createTokenManager(() => session.accessToken);
+  // Fall back to the private bootstrap Access-Token artifact when no interactive
+  // admin session exists (APP_SDK_INTEGRATION_SPEC section 4).
+  return createTokenManager(
+    () => session.accessToken || readBootstrapAccessTokenFromProcessEnv(),
+  );
 }
 
 export function bootstrapAdminAuth(): MailAdminSession | null {

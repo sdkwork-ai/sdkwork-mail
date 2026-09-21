@@ -22,6 +22,7 @@
     "@sdkwork/auth-pc-react": "workspace:*",
     "@sdkwork/auth-runtime-pc-react": "workspace:*",
     "@sdkwork/iam-contracts": "workspace:*",
+    "@sdkwork/iam-credential-entry": "workspace:*",
     "@sdkwork/mail-app-sdk": "workspace:*",
     "@sdkwork/mail-pc-admin-core": "workspace:*",
     "@sdkwork/mail-pc-admin-shell": "workspace:*",

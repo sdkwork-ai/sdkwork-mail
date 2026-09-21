@@ -7,8 +7,8 @@ export interface MailAppSession {
 }
 
 export const DEFAULT_APP_SESSION: MailAppSession = {
-  accessToken: "dev-access-token",
-  authToken: "dev-auth-token",
+  accessToken: "",
+  authToken: "",
   tenantId: "100001",
   organizationId: "0",
   userId: "1",

@@ -44,8 +44,8 @@ const defaultAppPermissionScope =
     'mail.messages.read mail.messages.write mail.verification.write mail.transactional.write';
 
 const defaultAppSession = MailAppSession(
-  accessToken: 'dev-access-token',
-  authToken: 'dev-auth-token',
+  accessToken: '',
+  authToken: '',
   tenantId: 'default',
   organizationId: 'default',
   userId: 'user',

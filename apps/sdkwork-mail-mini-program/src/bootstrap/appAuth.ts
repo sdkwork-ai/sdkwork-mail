@@ -1,3 +1,4 @@
+import { readBootstrapAccessTokenFromProcessEnv } from '@sdkwork/iam-credential-entry';
 import type { AuthTokenManager } from "@sdkwork/sdk-common";
 import {
   DEFAULT_APP_SESSION,
@@ -79,7 +80,11 @@ export function clearAppSession(): void {
 }
 
 export function createAppTokenManager(session: MailAppSession): AuthTokenManager {
-  return createTokenManager(() => session.accessToken);
+  // Fall back to the private bootstrap Access-Token artifact when no interactive
+  // app session exists (APP_SDK_INTEGRATION_SPEC section 4).
+  return createTokenManager(
+    () => session.accessToken || readBootstrapAccessTokenFromProcessEnv(),
+  );
 }
 
 export function consumeAppbaseCallbackSession(query: Record<string, string | undefined>): MailAppSession | null {
