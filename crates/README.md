@@ -33,4 +33,4 @@ sdkwork-mail.
 
 Run `pnpm run verify` from the repository root.
 
-Rust crate `specs/component.spec.json` files are materialized from `tools/materialize-Mail-rust-component-specs.mjs`.
+Rust crate `specs/component.spec.json` files are materialized from `tools/materialize-mail-rust-component-specs.mjs`.
