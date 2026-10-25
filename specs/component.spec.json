@@ -21,7 +21,7 @@
     "manifests": [
       "package.json",
       "Cargo.toml",
-      "sdkwork.workflow.json",
+      "agent.workflow.json",
       "specs/topology.spec.json"
     ]
   },
@@ -69,7 +69,7 @@
     {
       "file": "GITHUB_WORKFLOW_SPEC.md",
       "path": "../sdkwork-specs/GITHUB_WORKFLOW_SPEC.md",
-      "purpose": "sdkwork.workflow.json packaging, release, and GitHub Actions integration."
+      "purpose": "agent.workflow.json packaging, release, and GitHub Actions integration."
     },
     {
       "file": "APP_RUNTIME_TOPOLOGY_SPEC.md",

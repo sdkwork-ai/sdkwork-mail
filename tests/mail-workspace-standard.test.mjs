@@ -164,11 +164,11 @@ test("sdkwork-mail authority workspace does not require sdkwork-discovery withou
 });
 
 test("sdkwork-mail declares GitHub packaging workflow manifest", () => {
-  assert.ok(exists("sdkwork.workflow.json"), "sdkwork.workflow.json must exist");
+  assert.ok(exists("agent.workflow.json"), "agent.workflow.json must exist");
   assert.ok(exists(".github/workflows/package.yml"), ".github/workflows/package.yml must exist");
   assert.ok(exists(".github/workflows/Mail-governance.yml"), ".github/workflows/Mail-governance.yml must exist");
   assert.ok(exists("scripts/prepare-ci-dependencies.mjs"), "scripts/prepare-ci-dependencies.mjs must exist");
-  const workflow = JSON.parse(read("sdkwork.workflow.json"));
+  const workflow = JSON.parse(read("agent.workflow.json"));
   assert.equal(workflow.app?.id, "sdkwork-mail");
   const dependencyIds = (workflow.dependencies ?? []).map((dependency) => dependency.id);
   const verificationDependencyIds = (workflow.verificationDependencies ?? []).map((dependency) => dependency.id);
@@ -180,13 +180,13 @@ test("sdkwork-mail declares GitHub packaging workflow manifest", () => {
   assert.match(packageYml, /SDKWORK_DRIVE_REF/u, ".github/workflows/package.yml must pass SDKWORK_DRIVE_REF");
   assert.match(governanceYml, /workflow:prepare-ci-dependencies/u, ".github/workflows/Mail-governance.yml must prepare sibling dependencies");
   assert.match(governanceYml, /pnpm run verify/u, ".github/workflows/Mail-governance.yml must run pnpm run verify");
-  assert.ok(dependencyIds.includes("sdkwork-drive"), "sdkwork.workflow.json must declare sdkwork-drive for Drive-backed recording import");
-  assert.ok(dependencyIds.includes("sdkwork-web-framework"), "sdkwork.workflow.json must declare sdkwork-web-framework");
-  assert.ok(dependencyIds.includes("sdkwork-database"), "sdkwork.workflow.json must declare sdkwork-database");
-  assert.ok(dependencyIds.includes("sdkwork-utils"), "sdkwork.workflow.json must declare sdkwork-utils");
-  assert.ok(verificationDependencyIds.includes("sdkwork-im"), "sdkwork.workflow.json must declare sdkwork-im for migration boundary verification");
-  assert.ok(verificationDependencyIds.includes("sdkwork-core"), "sdkwork.workflow.json must declare sdkwork-core for migration boundary verification");
-  assert.equal(workflow.toolchains?.flutter, "stable", "sdkwork.workflow.json must declare flutter toolchain for mobile verification");
+  assert.ok(dependencyIds.includes("sdkwork-drive"), "agent.workflow.json must declare sdkwork-drive for Drive-backed recording import");
+  assert.ok(dependencyIds.includes("sdkwork-web-framework"), "agent.workflow.json must declare sdkwork-web-framework");
+  assert.ok(dependencyIds.includes("sdkwork-database"), "agent.workflow.json must declare sdkwork-database");
+  assert.ok(dependencyIds.includes("sdkwork-utils"), "agent.workflow.json must declare sdkwork-utils");
+  assert.ok(verificationDependencyIds.includes("sdkwork-im"), "agent.workflow.json must declare sdkwork-im for migration boundary verification");
+  assert.ok(verificationDependencyIds.includes("sdkwork-core"), "agent.workflow.json must declare sdkwork-core for migration boundary verification");
+  assert.equal(workflow.toolchains?.flutter, "stable", "agent.workflow.json must declare flutter toolchain for mobile verification");
 });
 
 test("sdkwork-mail authority workspace declares root component spec", () => {
@@ -466,13 +466,13 @@ test("sdkwork-mail integrates sdkwork-web-framework for HTTP route crates", () =
 
 test("sdkwork-mail integrates sdkwork-utils for shared Rust and TypeScript helpers", () => {
   const cargoToml = read("Cargo.toml");
-  const workflow = JSON.parse(read("sdkwork.workflow.json"));
+  const workflow = JSON.parse(read("agent.workflow.json"));
   const dependencyIds = (workflow.dependencies ?? []).map((dependency) => dependency.id);
   const serviceLib = read("crates/sdkwork-communication-mail-service/src/lib.rs");
   const imapPlugin = read("plugins/mail-imap/src/lib.rs");
 
   assert.match(cargoToml, /sdkwork-utils-rust/u, "Cargo.toml must declare sdkwork-utils-rust");
-  assert.ok(dependencyIds.includes("sdkwork-utils"), "sdkwork.workflow.json must declare sdkwork-utils");
+  assert.ok(dependencyIds.includes("sdkwork-utils"), "agent.workflow.json must declare sdkwork-utils");
   assert.match(serviceLib, /sdkwork_utils_rust::format_datetime/u, "service crate must use sdkwork-utils datetime helpers");
   assert.match(serviceLib, /sdkwork_utils_rust::sha256_hash/u, "service crate must use sdkwork-utils crypto helpers");
   assert.match(imapPlugin, /sdkwork_utils_rust::/u, "provider plugins must use sdkwork-utils instead of local crypto helpers");

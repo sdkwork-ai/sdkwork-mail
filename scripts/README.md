@@ -12,7 +12,7 @@ sdkwork-mail.
 
 - Thin build, verification, generation, migration, packaging, and release wrappers.
 - Cross-platform command shims that call `tools/`, Cargo, or pnpm scripts.
-- `prepare-ci-dependencies.mjs` — materializes sibling SDKWork repositories declared in `sdkwork.workflow.json` for CI and local verify parity.
+- `prepare-ci-dependencies.mjs` — materializes sibling SDKWork repositories declared in `agent.workflow.json` for CI and local verify parity.
 
 ## Forbidden Content
 
