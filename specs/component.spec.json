@@ -187,6 +187,6 @@
   "metadata": {
     "managedBy": "specs/component.spec.json",
     "standardVersion": "2026-06-18",
-    "notes": "Mail authority workspace without root sdkwork.app.config.json; runnable app surfaces live under apps/."
+    "notes": "Mail authority workspace without root agent.app.config.json; runnable app surfaces live under apps/."
   }
 }

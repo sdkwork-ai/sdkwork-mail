@@ -1,36 +1,53 @@
 {
   "schemaVersion": 3,
-  "kind": "sdkwork.app",
+  "kind": "agent.app",
   "app": {
-    "id": "sdkwork-mail-h5",
-    "displayName": "SDKWork Mail H5",
-    "version": "0.1.0",
-    "runtime": {
-      "family": "h5",
-      "framework": "react",
-      "surface": "mobile-browser"
-    },
-    "key": "app-4q7o0y",
-    "name": "SDKWork Mail H5",
-    "officialWebsiteUrl": "https://sdkwork.com/apps/app-4q7o0y",
-    "appType": "APP_HTML"
+    "key": "sdkwork-mail",
+    "name": "SDKWork Mail",
+    "displayName": "SDKWork Mail",
+    "description": "SDKWork Mail application for inbox, compose, and mailbox administration.",
+    "vendor": "SDKWork",
+    "officialWebsiteUrl": "https://sdkwork.com/apps/sdkwork-mail",
+    "appType": "APP_REACT",
+    "versionSource": "package.json"
   },
-  "backend": {},
+  "backend": {
+    "profileKey": "backend-root-admin",
+    "ownerMode": "tenant",
+    "grantMode": "current",
+    "platform": "WEB",
+    "appId": "sdkwork-mail-pc",
+    "tenantId": "100001",
+    "organizationId": "0",
+    "accessTokenPermissionScope": [
+      "iam.users.read",
+      "iam.organizations.read",
+      "iam.roles.read",
+      "iam.permissions.read"
+    ]
+  },
   "runtime": {
-    "supportedDeploymentProfiles": [
-      "cloud"
+    "family": "web",
+    "framework": "react",
+    "runtimes": [
+      "WEB"
     ],
-    "defaultDeploymentProfile": "cloud",
-    "family": "server",
-    "framework": "rust-axum"
+    "deliveryModes": [
+      "WEB_URL"
+    ],
+    "supportedDeploymentProfiles": [
+      "cloud",
+      "standalone"
+    ],
+    "defaultDeploymentProfile": "cloud"
   },
   "media": {
     "icons": {
       "primary": {
-        "id": "app-4q7o0y-primary-icon",
+        "id": "sdkwork-mail-primary-icon",
         "type": "ICON",
         "purpose": "PRIMARY",
-        "url": "https://cdn.sdkwork.com/apps/app-4q7o0y/assets/icon-1024.png",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-mail/assets/icon-1024.png",
         "platform": "APP",
         "locale": "en-US",
         "width": 1024,
@@ -51,10 +68,10 @@
     },
     "screenshots": [
       {
-        "id": "app-4q7o0y-web-screenshot",
+        "id": "sdkwork-mail-web-screenshot",
         "type": "SCREENSHOT",
         "purpose": "CATALOG_SCREENSHOT",
-        "url": "https://cdn.sdkwork.com/apps/app-4q7o0y/media/web-screenshot.png",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-mail/media/web-screenshot.png",
         "platform": "WEB",
         "locale": "en-US",
         "deviceClass": "BROWSER",
@@ -64,21 +81,21 @@
         "format": "PNG",
         "fileSizeBytes": 1048576,
         "alphaChannel": false,
-        "caption": "SDKWork Mail H5 product screenshot.",
+        "caption": "SDKWork Mail product screenshot.",
         "sortOrder": 0,
         "enabled": true,
         "metadata": {
           "generatedPlaceholder": true,
-          "altText": "SDKWork Mail H5 app screenshot."
+          "altText": "SDKWork Mail app screenshot."
         }
       }
     ],
     "previews": [
       {
-        "id": "app-4q7o0y-catalog-preview",
+        "id": "sdkwork-mail-catalog-preview",
         "type": "PREVIEW_IMAGE",
         "purpose": "CATALOG_PREVIEW",
-        "url": "https://cdn.sdkwork.com/apps/app-4q7o0y/media/preview-cover.png",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-mail/media/preview-cover.png",
         "platform": "WEB",
         "locale": "en-US",
         "width": 1600,
@@ -86,12 +103,12 @@
         "format": "PNG",
         "fileSizeBytes": 786432,
         "alphaChannel": false,
-        "caption": "SDKWork Mail H5 preview.",
+        "caption": "SDKWork Mail preview.",
         "sortOrder": 0,
         "enabled": true,
         "metadata": {
           "generatedPlaceholder": true,
-          "altText": "SDKWork Mail H5 preview cover."
+          "altText": "SDKWork Mail preview cover."
         }
       }
     ],
@@ -113,26 +130,44 @@
       "name": "sdkwork-skills-app"
     },
     "stores": [],
-    "storeUrl": "https://sdkwork.com/apps/app-4q7o0y"
+    "storeUrl": "https://sdkwork.com/apps/sdkwork-mail"
   },
   "artifacts": {
     "installConfig": {
       "defaultPackageId": "linux-x64-cloud-server-tar-gz",
-      "installCommand": "sdkwork install app-4q7o0y",
-      "launchCommand": "sdkwork open app-4q7o0y",
-      "uninstallCommand": "sdkwork uninstall app-4q7o0y",
+      "installCommand": "sdkwork install sdkwork-mail",
+      "launchCommand": "sdkwork open sdkwork-mail",
+      "uninstallCommand": "sdkwork uninstall sdkwork-mail",
       "packages": [
         {
           "id": "linux-x64-cloud-server-tar-gz",
-          "name": "App 4q7o0y cloud server archive",
+          "name": "Sdkwork Mail cloud server archive",
           "sourceType": "BINARY_URL",
           "packageFormat": "TAR_GZ",
           "platform": "API",
-          "url": "https://cdn.sdkwork.com/apps/app-4q7o0y/STABLE/0.1.0/linux-x64-cloud-server-tar-gz-0.1.0.tar.gz",
+          "url": "https://cdn.sdkwork.com/apps/sdkwork-mail/STABLE/0.1.0/linux-x64-cloud-server-tar-gz-0.1.0.tar.gz",
           "architecture": "x64",
           "checksumAlgorithm": "SHA-256",
-          "checksum": "da9ec909a4fddd45b86a778247460af156d4575fc7668aba3581fbbc7be596db",
+          "checksum": "66f3f3dc421d32c3a1e6f705ad737273657490c64cca8dea7037c8b0078bd4da",
           "deploymentProfile": "cloud",
+          "runtimeTarget": "server",
+          "profileBinding": "fixed",
+          "enabled": true,
+          "metadata": {
+            "releaseBuildDeferred": false
+          }
+        },
+        {
+          "id": "linux-x64-standalone-server-tar-gz",
+          "name": "Sdkwork Mail standalone server archive",
+          "sourceType": "BINARY_URL",
+          "packageFormat": "TAR_GZ",
+          "platform": "API",
+          "url": "https://cdn.sdkwork.com/apps/sdkwork-mail/STABLE/0.1.0/linux-x64-standalone-server-tar-gz-0.1.0.tar.gz",
+          "architecture": "x64",
+          "checksumAlgorithm": "SHA-256",
+          "checksum": "da50685af7637665fa785720b0d7cdb3da72370b782bba89aebd16460f3d5576",
+          "deploymentProfile": "standalone",
           "runtimeTarget": "server",
           "profileBinding": "fixed",
           "enabled": true,
@@ -153,16 +188,17 @@
       {
         "version": "0.1.0",
         "releaseChannel": "STABLE",
-        "title": "SDKWork Mail H5 0.1.0",
-        "summary": "SDKWork Mail H5 initialized standard release.",
-        "content": "Initial SDKWork App Standard v3 manifest for SDKWork Mail H5.",
+        "title": "SDKWork Mail 0.1.0",
+        "summary": "SDKWork Mail initialized standard release.",
+        "content": "Initial SDKWork App Standard v3 manifest for SDKWork Mail.",
         "highlights": [
           "SDKWork App Standard v3 configuration initialized",
           "platform_app projection metadata standardized",
           "Download package matrix normalized"
         ],
         "packageIds": [
-          "linux-x64-cloud-server-tar-gz"
+          "linux-x64-cloud-server-tar-gz",
+          "linux-x64-standalone-server-tar-gz"
         ],
         "publishedAt": "2026-05-07T00:00:00Z",
         "current": true,

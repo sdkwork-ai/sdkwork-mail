@@ -231,7 +231,7 @@ async function main() {
   const profileEnv = loadProfile(profileId);
   const runtimeEnv = mergeRepoDevBootstrapAccessTokenEnv({
     repoRoot: REPO_ROOT,
-    manifestPath: 'sdkwork.app.config.json',
+    manifestPath: 'agent.app.config.json',
     appId: 'sdkwork-mail-pc',
     env: mergeRuntimeEnv(process.env, profileEnv, resolveIamDevEnv(process.env), IAM_APPLICATION_BOOTSTRAP_ENV, {
       sdkwork_mail_PROFILE_ID: profileId,

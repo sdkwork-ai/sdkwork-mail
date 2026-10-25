@@ -1,18 +1,18 @@
 {
   "schemaVersion": 3,
-  "kind": "sdkwork.app",
+  "kind": "agent.app",
   "app": {
-    "id": "sdkwork-mail-pc",
-    "displayName": "SDKWork Mail PC",
+    "id": "sdkwork-mail-flutter-mobile",
+    "displayName": "SDKWork Mail Mobile",
     "version": "0.1.0",
     "runtime": {
-      "family": "pc",
-      "framework": "react",
-      "surface": "browser"
+      "family": "mobile",
+      "framework": "flutter",
+      "surface": "app"
     },
-    "key": "app-jd0qxu",
-    "name": "SDKWork Mail PC",
-    "officialWebsiteUrl": "https://sdkwork.com/apps/app-jd0qxu",
+    "key": "app-wnrxgd",
+    "name": "SDKWork Mail Mobile",
+    "officialWebsiteUrl": "https://sdkwork.com/apps/app-wnrxgd",
     "appType": "APP_HTML"
   },
   "backend": {},
@@ -27,10 +27,10 @@
   "media": {
     "icons": {
       "primary": {
-        "id": "app-jd0qxu-primary-icon",
+        "id": "app-wnrxgd-primary-icon",
         "type": "ICON",
         "purpose": "PRIMARY",
-        "url": "https://cdn.sdkwork.com/apps/app-jd0qxu/assets/icon-1024.png",
+        "url": "https://cdn.sdkwork.com/apps/app-wnrxgd/assets/icon-1024.png",
         "platform": "APP",
         "locale": "en-US",
         "width": 1024,
@@ -51,10 +51,10 @@
     },
     "screenshots": [
       {
-        "id": "app-jd0qxu-web-screenshot",
+        "id": "app-wnrxgd-web-screenshot",
         "type": "SCREENSHOT",
         "purpose": "CATALOG_SCREENSHOT",
-        "url": "https://cdn.sdkwork.com/apps/app-jd0qxu/media/web-screenshot.png",
+        "url": "https://cdn.sdkwork.com/apps/app-wnrxgd/media/web-screenshot.png",
         "platform": "WEB",
         "locale": "en-US",
         "deviceClass": "BROWSER",
@@ -64,21 +64,21 @@
         "format": "PNG",
         "fileSizeBytes": 1048576,
         "alphaChannel": false,
-        "caption": "SDKWork Mail PC product screenshot.",
+        "caption": "SDKWork Mail Mobile product screenshot.",
         "sortOrder": 0,
         "enabled": true,
         "metadata": {
           "generatedPlaceholder": true,
-          "altText": "SDKWork Mail PC app screenshot."
+          "altText": "SDKWork Mail Mobile app screenshot."
         }
       }
     ],
     "previews": [
       {
-        "id": "app-jd0qxu-catalog-preview",
+        "id": "app-wnrxgd-catalog-preview",
         "type": "PREVIEW_IMAGE",
         "purpose": "CATALOG_PREVIEW",
-        "url": "https://cdn.sdkwork.com/apps/app-jd0qxu/media/preview-cover.png",
+        "url": "https://cdn.sdkwork.com/apps/app-wnrxgd/media/preview-cover.png",
         "platform": "WEB",
         "locale": "en-US",
         "width": 1600,
@@ -86,12 +86,12 @@
         "format": "PNG",
         "fileSizeBytes": 786432,
         "alphaChannel": false,
-        "caption": "SDKWork Mail PC preview.",
+        "caption": "SDKWork Mail Mobile preview.",
         "sortOrder": 0,
         "enabled": true,
         "metadata": {
           "generatedPlaceholder": true,
-          "altText": "SDKWork Mail PC preview cover."
+          "altText": "SDKWork Mail Mobile preview cover."
         }
       }
     ],
@@ -113,25 +113,25 @@
       "name": "sdkwork-skills-app"
     },
     "stores": [],
-    "storeUrl": "https://sdkwork.com/apps/app-jd0qxu"
+    "storeUrl": "https://sdkwork.com/apps/app-wnrxgd"
   },
   "artifacts": {
     "installConfig": {
       "defaultPackageId": "linux-x64-cloud-server-tar-gz",
-      "installCommand": "sdkwork install app-jd0qxu",
-      "launchCommand": "sdkwork open app-jd0qxu",
-      "uninstallCommand": "sdkwork uninstall app-jd0qxu",
+      "installCommand": "sdkwork install app-wnrxgd",
+      "launchCommand": "sdkwork open app-wnrxgd",
+      "uninstallCommand": "sdkwork uninstall app-wnrxgd",
       "packages": [
         {
           "id": "linux-x64-cloud-server-tar-gz",
-          "name": "App Jd0qxu cloud server archive",
+          "name": "App Wnrxgd cloud server archive",
           "sourceType": "BINARY_URL",
           "packageFormat": "TAR_GZ",
           "platform": "API",
-          "url": "https://cdn.sdkwork.com/apps/app-jd0qxu/STABLE/0.1.0/linux-x64-cloud-server-tar-gz-0.1.0.tar.gz",
+          "url": "https://cdn.sdkwork.com/apps/app-wnrxgd/STABLE/0.1.0/linux-x64-cloud-server-tar-gz-0.1.0.tar.gz",
           "architecture": "x64",
           "checksumAlgorithm": "SHA-256",
-          "checksum": "08f6bb959754aa9e81e54b22b41f87f80e98eebec1e4c40f618525cc02601b7b",
+          "checksum": "88a92be5e4a63d5867f5bdaa33856f77fdc18aae135b5b8397794214af58cdcf",
           "deploymentProfile": "cloud",
           "runtimeTarget": "server",
           "profileBinding": "fixed",
@@ -153,9 +153,9 @@
       {
         "version": "0.1.0",
         "releaseChannel": "STABLE",
-        "title": "SDKWork Mail PC 0.1.0",
-        "summary": "SDKWork Mail PC initialized standard release.",
-        "content": "Initial SDKWork App Standard v3 manifest for SDKWork Mail PC.",
+        "title": "SDKWork Mail Mobile 0.1.0",
+        "summary": "SDKWork Mail Mobile initialized standard release.",
+        "content": "Initial SDKWork App Standard v3 manifest for SDKWork Mail Mobile.",
         "highlights": [
           "SDKWork App Standard v3 configuration initialized",
           "platform_app projection metadata standardized",

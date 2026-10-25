@@ -60,14 +60,14 @@ test("sdkwork-mail keeps app packages under app surface roots", () => {
 
 test("sdkwork-mail mini program root exposes user Mail surface packages", () => {
   const appRoot = "apps/sdkwork-mail-mini-program";
-  assert.ok(exists(`${appRoot}/sdkwork.app.config.json`), `${appRoot}/sdkwork.app.config.json must exist`);
+  assert.ok(exists(`${appRoot}/agent.app.config.json`), `${appRoot}/agent.app.config.json must exist`);
   assert.ok(exists(`${appRoot}/src/app.json`), `${appRoot}/src/app.json must exist`);
   const appJson = JSON.parse(read(`${appRoot}/src/app.json`));
   assert.ok(
     appJson.pages?.includes("pages/mail-message/index"),
     `${appRoot}/src/app.json must include mail message detail page`,
   );
-  const appConfig = JSON.parse(read(`${appRoot}/sdkwork.app.config.json`));
+  const appConfig = JSON.parse(read(`${appRoot}/agent.app.config.json`));
   assert.equal(appConfig.app?.runtime?.family, "mini-program");
   const MailPackageSource = read(`${appRoot}/packages/sdkwork-mail-mp-Mail/package.json`);
   assert.match(MailPackageSource, /@sdkwork\/mail-app-sdk/u, "sdkwork-mail-mp-Mail must depend on the composed app SDK");
@@ -217,7 +217,7 @@ test("sdkwork-mail runnable app roots declare component specs", () => {
     assert.equal(spec.component?.name, expectation.name);
     assert.equal(spec.component?.type, expectation.type);
     assert.equal(spec.component?.domain, "mail", `${specPath} must declare mail domain`);
-    assert.ok(spec.component?.manifests?.includes("sdkwork.app.config.json"), `${specPath} must declare sdkwork.app.config.json`);
+    assert.ok(spec.component?.manifests?.includes("agent.app.config.json"), `${specPath} must declare agent.app.config.json`);
   }
 });
 
