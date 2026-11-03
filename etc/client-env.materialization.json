@@ -122,6 +122,36 @@
           "iam:self"
         ]
       }
+    },
+    {
+      "id": "sdkwork-mail-flutter-mobile",
+      "root": "apps/sdkwork-mail-flutter-mobile",
+      "format": "flutter",
+      "runtimeTarget": "flutter-android",
+      "bindings": {},
+      "accessToken": {
+        "appId": "app-wnrxgd",
+        "tenantId": "100001",
+        "organizationId": "0",
+        "permissionScope": [
+          "iam:self"
+        ]
+      }
+    },
+    {
+      "id": "sdkwork-mail-mini-program",
+      "root": "apps/sdkwork-mail-mini-program",
+      "format": "mini-program",
+      "runtimeTarget": "mini-program",
+      "bindings": {},
+      "accessToken": {
+        "appId": "app-hioswq",
+        "tenantId": "100001",
+        "organizationId": "0",
+        "permissionScope": [
+          "iam:self"
+        ]
+      }
     }
   ]
 }
