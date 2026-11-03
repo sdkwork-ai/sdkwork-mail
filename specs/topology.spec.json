@@ -49,13 +49,13 @@
     "cloud.demo": "etc/topology/cloud.demo.env"
   },
   "envKeys": {
-    "environment": "sdkwork_mail_ENVIRONMENT",
-    "profileId": "sdkwork_mail_PROFILE_ID",
-    "standaloneGatewayBind": "sdkwork_mail_APPLICATION_PUBLIC_INGRESS_BIND",
-    "clientApiGatewayBaseUrl": "VITE_sdkwork_mail_PC_PLATFORM_API_GATEWAY_HTTP_URL",
-    "apiGatewayBaseUrl": "sdkwork_mail_PLATFORM_API_GATEWAY_HTTP_URL",
-    "deploymentProfile": "sdkwork_mail_DEPLOYMENT_PROFILE",
-    "clientDeploymentProfile": "VITE_sdkwork_mail_PC_DEPLOYMENT_PROFILE"
+    "environment": "SDKWORK_MAIL_ENVIRONMENT",
+    "profileId": "SDKWORK_MAIL_PROFILE_ID",
+    "standaloneGatewayBind": "SDKWORK_MAIL_APPLICATION_PUBLIC_INGRESS_BIND",
+    "clientApiGatewayBaseUrl": "VITE_SDKWORK_MAIL_PC_PLATFORM_API_GATEWAY_HTTP_URL",
+    "apiGatewayBaseUrl": "SDKWORK_MAIL_PLATFORM_API_GATEWAY_HTTP_URL",
+    "deploymentProfile": "SDKWORK_MAIL_DEPLOYMENT_PROFILE",
+    "clientDeploymentProfile": "VITE_SDKWORK_MAIL_PC_DEPLOYMENT_PROFILE"
   },
   "surfaces": {
     "application.public-ingress": {
@@ -63,17 +63,17 @@
       "protocols": [
         "http"
       ],
-      "bindEnv": "sdkwork_mail_APPLICATION_PUBLIC_INGRESS_BIND",
-      "httpUrlEnv": "sdkwork_mail_APPLICATION_PUBLIC_HTTP_URL",
-      "clientHttpEnv": "VITE_sdkwork_mail_PC_APPLICATION_PUBLIC_HTTP_URL"
+      "bindEnv": "SDKWORK_MAIL_APPLICATION_PUBLIC_INGRESS_BIND",
+      "httpUrlEnv": "SDKWORK_MAIL_APPLICATION_PUBLIC_HTTP_URL",
+      "clientHttpEnv": "VITE_SDKWORK_MAIL_PC_APPLICATION_PUBLIC_HTTP_URL"
     },
     "platform.api-gateway": {
       "connectivityPlane": "platform",
       "protocols": [
         "http"
       ],
-      "httpUrlEnv": "sdkwork_mail_PLATFORM_API_GATEWAY_HTTP_URL",
-      "clientHttpEnv": "VITE_sdkwork_mail_PC_PLATFORM_API_GATEWAY_HTTP_URL"
+      "httpUrlEnv": "SDKWORK_MAIL_PLATFORM_API_GATEWAY_HTTP_URL",
+      "clientHttpEnv": "VITE_SDKWORK_MAIL_PC_PLATFORM_API_GATEWAY_HTTP_URL"
     }
   },
   "cloudPublicHosts": {
@@ -665,11 +665,11 @@
       ]
     },
     "envKeys": [
-      "sdkwork_mail_API_BIND",
+      "SDKWORK_MAIL_API_BIND",
       "VITE_mail_API_BASE_URL",
       "VITE_mail_BACKEND_API_BASE_URL",
-      "sdkwork_mail_HOSTING",
-      "VITE_sdkwork_mail_PC_HOSTING"
+      "SDKWORK_MAIL_HOSTING",
+      "VITE_SDKWORK_MAIL_PC_HOSTING"
     ]
   }
 }

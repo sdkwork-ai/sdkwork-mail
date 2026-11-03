@@ -14,4 +14,4 @@ Platform standard: `../../sdkwork-specs/APP_RUNTIME_TOPOLOGY_ADOPTION.md`
 | `standalone.demo` | independent demo deployment |
 | `cloud.demo` | cloud demo deployment |
 
-Loader: `scripts/lib/mail-topology.mjs` → `@sdkwork/app-topology`.
+Loader: `scripts/lib/mail-topology.mjs` 鈫?`@sdkwork/app-topology`.
