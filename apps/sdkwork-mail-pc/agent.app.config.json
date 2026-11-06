@@ -15,7 +15,14 @@
     "officialWebsiteUrl": "https://sdkwork.com/apps/app-jd0qxu",
     "appType": "APP_HTML"
   },
-  "backend": {},
+  "backend": {
+    "appId": "app-jd0qxu",
+    "tenantId": "100001",
+    "organizationId": "0",
+    "accessTokenPermissionScope": [
+      "iam:self"
+    ]
+  },
   "runtime": {
     "supportedDeploymentProfiles": [
       "cloud"
