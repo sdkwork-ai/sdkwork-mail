@@ -241,7 +241,7 @@ impl MailPersistencePort for MailPostgresPersistencePort {
                 ) VALUES (
                     $1, $2, $3, $4, $5, $6, $7,
                     $8, $9, $10, $11, $12, $13, FALSE, FALSE,
-                    $14, $15, $16, $17, $18, $19,
+                    $14, $15, $16::timestamp, $17::timestamp, $18, $19,
                     NOW(), NOW(), 0
                 )
                 "#,
