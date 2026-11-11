@@ -1,0 +1,11 @@
+{
+  "comment": "Deliberate exceptions to MODULE_SPEC.md §4.2 (Backend Module Call Boundary, In-Process First). SDKWork Mail reaches sdkwork-drive IN-PROCESS by default: crates/sdkwork-mail-service-host/src/drive_attachment_port.rs validates attachment driveNodeId references on the shared PostgreSQL pool through sdkwork-drive-workspace-service (DriveUploaderStore::find_active_node/find_active_space, SqlDrivePermissionService::resolve_effective_node_access + allows_role), and no sibling endpoint variable is read unless a deployment explicitly opts in. The single entry below is the ONLY remaining split-deployment path: it is gated behind SDKWORK_MAIL_DRIVE_MODE=http, is built during startup (so a missing endpoint aborts the boot instead of failing the first message), and is never constructed by a deployment that leaves the mode unset. Removing it would delete the supported real-split-deployment topology that §4.2.3 records as an allowed exception (same shape as sdkwork-order -> account and sdkwork-appstore -> drive).",
+  "allow": [
+    {
+      "file": "crates/sdkwork-mail-service-host/src/drive_attachment_http_adapter.rs",
+      "envVar": "SDKWORK_DRIVE_FACADE_URL",
+      "module": "drive",
+      "reason": "Opt-in split deployment only. SDKWORK_MAIL_DRIVE_MODE=http selects this adapter; the default is drive_attachment_port::InProcessMailDriveAttachmentPort over sdkwork-drive-workspace-service on the host pool. HttpMailDriveAttachmentPort::from_env() fails at startup when SDKWORK_DRIVE_FACADE_URL is missing, so the default deployment can never reach it; the migration this entry tracks is complete on the default path (MODULE_SPEC.md §4.2.3 split-deployment exception)."
+    }
+  ]
+}

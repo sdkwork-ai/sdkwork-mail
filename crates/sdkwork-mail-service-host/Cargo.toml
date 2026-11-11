@@ -10,6 +10,7 @@ license.workspace = true
 workspace = true
 [dependencies]
 sdkwork-communication-mail-service.workspace = true
+sdkwork-drive-workspace-service.workspace = true
 sdkwork-mail-adapter-imap.workspace = true
 sdkwork-mail-adapter-smtp.workspace = true
 sdkwork-routes-mail-app-api.workspace = true
@@ -17,6 +18,7 @@ sdkwork-routes-mail-backend-api.workspace = true
 sdkwork-utils-rust.workspace = true
 serde.workspace = true
 serde_json.workspace = true
+sqlx.workspace = true
 uuid.workspace = true
 reqwest.workspace = true
 tokio.workspace = true

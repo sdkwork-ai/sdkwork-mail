@@ -90,7 +90,7 @@ IM integration is one-way: `sdkwork-im` may consume Mail SDKs; Mail must not dep
 - Dual-token IAM via `sdkwork-web-framework` / `sdkwork-appbase`
 - Provider credentials stored through backend control-plane; never exposed on app API
 - Webhook ingress uses framework rate-limit tier (`openApiDefault`)
-- Drive attachment validation: local field checks in dev; optional facade lookup when `SDKWORK_DRIVE_FACADE_URL` is set
+- Drive attachment validation: in-process on the shared PostgreSQL pool by default (`sdkwork-drive-workspace-service`: active node/space + `reader` ACL for the message owner); split deployments opt in with `SDKWORK_MAIL_DRIVE_MODE=http` + `SDKWORK_DRIVE_FACADE_URL`, validated at startup
 - Readiness checks include optional Postgres pool health when persistence is configured
 
 ## 7. Deployment And Runtime Topology
@@ -102,8 +102,9 @@ Key environment variables:
 | Variable | Purpose |
 |----------|---------|
 | `SDKWORK_DATABASE_*` | Required shared PostgreSQL persistence identity |
-| `SDKWORK_DRIVE_FACADE_URL` | Drive node validation for attachments |
-| `SDKWORK_AUTH_TOKEN` / `SDKWORK_ACCESS_TOKEN` | Service credentials for Drive facade |
+| `SDKWORK_MAIL_DRIVE_MODE` | `http` opts in to the split-deployment Drive adapter; unset means in-process |
+| `SDKWORK_DRIVE_FACADE_URL` | Split-deployment only: Drive endpoint, required when the mode is `http` |
+| `SDKWORK_AUTH_TOKEN` / `SDKWORK_ACCESS_TOKEN` | Service credentials for the split-deployment Drive facade |
 | `SDKWORK_MAIL_SMTP_*` / `SDKWORK_MAIL_IMAP_*` | Transport plugin configuration |
 
 See `etc/examples/mail-runtime.env.example` and `specs/topology.spec.json`.

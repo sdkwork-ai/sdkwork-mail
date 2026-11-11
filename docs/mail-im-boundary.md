@@ -59,8 +59,9 @@ Mail never stores attachment bytes in `mail_*` tables.
 1. Clients upload through **`sdkwork-drive-app-sdk`** and receive `driveNodeId`.
 2. Mail create-message requests reference `attachments[].driveNodeId` plus metadata.
 3. Mail validates references through `MailDriveAttachmentPort`:
-   - local development: field validation (`LocalMailDriveAttachmentPort`)
-   - production: optional Drive facade lookup when `SDKWORK_DRIVE_FACADE_URL` is configured
+   - default (all packaged deployments): **in-process** Drive call on the shared PostgreSQL pool — `DriveUploaderStore::find_active_node`/`find_active_space` plus `SqlDrivePermissionService::resolve_effective_node_access` with the `reader` role (MODULE_SPEC.md §4.2)
+   - without a database (no persistence either): field validation only (`LocalMailDriveAttachmentPort`)
+   - split deployment only: `SDKWORK_MAIL_DRIVE_MODE=http` + `SDKWORK_DRIVE_FACADE_URL`, validated at startup
 4. Mail persists `mail_attachment.drive_node_id` only.
 
 ## API Ownership

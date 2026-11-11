@@ -92,16 +92,31 @@ pub struct MailApiBootstrap {
 /// Builds the Mail product service from the canonical environment profile:
 /// SMTP transport, drive attachment port, and lifecycle-prepared persistence
 /// when configured.
+///
+/// The attachment port is always the in-process Drive port bound to the process
+/// PostgreSQL pool (MODULE_SPEC.md §4.2); only
+/// `SDKWORK_MAIL_DRIVE_MODE=http` selects the split-deployment HTTP adapter, and
+/// that opt-in is validated here so a missing endpoint aborts the boot.
 pub async fn bootstrap_mail_api_service_from_env() -> anyhow::Result<MailApiBootstrap> {
+    let persistence_bootstrap = connect_mail_persistence_bootstrap_from_env()
+        .await
+        .map_err(|error| anyhow::anyhow!("connect mail persistence: {error}"))?;
+
     let mut service = MailProductService::new()
         .with_transport(build_mail_transport_from_env_arc())
-        .with_drive_attachment_port(build_mail_drive_attachment_port_from_env());
+        .with_drive_attachment_port(
+            build_mail_drive_attachment_port_from_env(
+                persistence_bootstrap
+                    .as_ref()
+                    .and_then(|bootstrap| bootstrap.pool.as_ref())
+                    .and_then(DatabasePool::as_postgres)
+                    .cloned(),
+            )
+            .map_err(|error| anyhow::anyhow!("{error}"))?,
+        );
     let mut database_pool = None;
 
-    if let Some(bootstrap) = connect_mail_persistence_bootstrap_from_env()
-        .await
-        .map_err(|error| anyhow::anyhow!("connect mail persistence: {error}"))?
-    {
+    if let Some(bootstrap) = persistence_bootstrap {
         database_pool = bootstrap.pool;
         service = service.with_persistence(bootstrap.persistence);
     }
@@ -126,12 +141,24 @@ pub async fn assemble_api_router_with_bootstrap(
 }
 
 pub async fn assemble_api_router() -> anyhow::Result<ApiAssembly> {
-    let mut service = MailProductService::new().with_transport(build_mail_transport_from_env_arc());
-
-    if let Some(bootstrap) = connect_mail_persistence_bootstrap_from_env()
+    let persistence_bootstrap = connect_mail_persistence_bootstrap_from_env()
         .await
-        .map_err(|error| anyhow::anyhow!("connect mail persistence: {error}"))?
-    {
+        .map_err(|error| anyhow::anyhow!("connect mail persistence: {error}"))?;
+
+    let mut service = MailProductService::new()
+        .with_transport(build_mail_transport_from_env_arc())
+        .with_drive_attachment_port(
+            build_mail_drive_attachment_port_from_env(
+                persistence_bootstrap
+                    .as_ref()
+                    .and_then(|bootstrap| bootstrap.pool.as_ref())
+                    .and_then(DatabasePool::as_postgres)
+                    .cloned(),
+            )
+            .map_err(|error| anyhow::anyhow!("{error}"))?,
+        );
+
+    if let Some(bootstrap) = persistence_bootstrap {
         service = service.with_persistence(bootstrap.persistence);
     }
 
@@ -147,7 +174,11 @@ pub async fn assemble_api_router_with_pool(pool: DatabasePool) -> Result<ApiAsse
     let service = Arc::new(
         MailProductService::new()
             .with_transport(build_mail_transport_from_env_arc())
-            .with_persistence(persistence),
+            .with_persistence(persistence)
+            .with_drive_attachment_port(
+                build_mail_drive_attachment_port_from_env(pool.as_postgres().cloned())
+                    .map_err(|error| error.to_string())?,
+            ),
     );
 
     let router = Router::new()

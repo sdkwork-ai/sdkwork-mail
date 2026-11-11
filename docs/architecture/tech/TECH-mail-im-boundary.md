@@ -22,8 +22,9 @@ Attachment binaries are owned by `sdkwork-drive`. Mail stores metadata and `driv
 
 | Variable | Purpose |
 |----------|---------|
-| `SDKWORK_DRIVE_FACADE_URL` | Enables production Drive node validation for attachments |
-| `SDKWORK_AUTH_TOKEN` / `SDKWORK_ACCESS_TOKEN` | Service credentials for Drive facade calls |
+| `SDKWORK_MAIL_DRIVE_MODE` | `http` opts in to the split-deployment Drive adapter; unset/`in-process` is the default |
+| `SDKWORK_DRIVE_FACADE_URL` | Split-deployment only: Drive node validation endpoint, required (startup-checked) when the mode is `http` |
+| `SDKWORK_AUTH_TOKEN` / `SDKWORK_ACCESS_TOKEN` | Service credentials for Drive facade calls (split deployment only) |
 
 ## Verification
 

@@ -497,17 +497,37 @@ test("sdkwork-mail route manifests declare WebRequestContext and apiSurface", ()
   }
 });
 
-test("sdkwork-mail service host wires drive attachment port from env", () => {
-  const bootstrapSource = read("crates/sdkwork-api-mail-standalone-gateway/src/bootstrap.rs");
+test("sdkwork-mail service host wires the in-process drive attachment port", () => {
+  const bootstrapSource = read("crates/sdkwork-api-mail-assembly/src/bootstrap.rs");
   const portSource = read("crates/sdkwork-mail-service-host/src/drive_attachment_port.rs");
+  const httpAdapterSource = read("crates/sdkwork-mail-service-host/src/drive_attachment_http_adapter.rs");
   const serviceHostLib = read("crates/sdkwork-mail-service-host/src/lib.rs");
+  const workspaceManifest = read("Cargo.toml");
+  const serviceHostManifest = read("crates/sdkwork-mail-service-host/Cargo.toml");
+  const allowList = JSON.parse(read("specs/backend-module-call-boundary.allow.json"));
 
   assert.match(bootstrapSource, /build_mail_drive_attachment_port_from_env/u);
   assert.match(bootstrapSource, /with_drive_attachment_port/u);
   assert.match(serviceHostLib, /build_mail_drive_attachment_port_from_env/u);
-  assert.match(portSource, /SDKWORK_DRIVE_FACADE_URL/u);
+  assert.match(workspaceManifest, /sdkwork-drive-workspace-service/u);
+  assert.match(serviceHostManifest, /sdkwork-drive-workspace-service/u);
+
+  // Default path: Drive's own store and permission service, in-process.
+  assert.match(portSource, /find_active_node/u);
+  assert.match(portSource, /find_active_space/u);
+  assert.match(portSource, /resolve_effective_node_access/u);
+  assert.match(portSource, /allows_role/u);
+  assert.match(portSource, /SDKWORK_MAIL_DRIVE_MODE/u);
   assert.match(portSource, /MailDriveAttachmentPort/u);
   assert.match(portSource, /LocalMailDriveAttachmentPort/u);
+
+  // The sibling endpoint survives only in the explicitly opted-in adapter, and
+  // that exception is recorded with a reason (MODULE_SPEC.md §4.2.3).
+  assert.doesNotMatch(portSource.split("#[cfg(test)]")[0], /SDKWORK_DRIVE_FACADE_URL/u);
+  assert.match(httpAdapterSource, /SDKWORK_DRIVE_FACADE_URL/u);
+  assert.match(httpAdapterSource, /MissingEndpoint/u);
+  assert.equal(allowList.allow.length, 1);
+  assert.ok(allowList.allow.every((entry) => entry.reason && entry.reason.trim().length > 0));
 });
 
 test("sdkwork-mail standalone-gateway wires database readiness when persistence pool is configured", () => {
