@@ -526,8 +526,17 @@ test("sdkwork-mail service host wires the in-process drive attachment port", () 
   assert.doesNotMatch(portSource.split("#[cfg(test)]")[0], /SDKWORK_DRIVE_FACADE_URL/u);
   assert.match(httpAdapterSource, /SDKWORK_DRIVE_FACADE_URL/u);
   assert.match(httpAdapterSource, /MissingEndpoint/u);
-  assert.equal(allowList.allow.length, 1);
+  assert.equal(allowList.allow.length, 2);
   assert.ok(allowList.allow.every((entry) => entry.reason && entry.reason.trim().length > 0));
+  // The second detection mode (inline sibling API path in an outbound client)
+  // needs the entry to be file-scoped, so the same adapter file is recorded
+  // once with the env var and once without it.
+  assert.ok(
+    allowList.allow.some(
+      (entry) => !entry.envVar && entry.file.endsWith("drive_attachment_http_adapter.rs"),
+    ),
+    "the adapter file must also be allowlisted file-scoped for its inline /app/v3/api surface",
+  );
 });
 
 test("sdkwork-mail standalone-gateway wires database readiness when persistence pool is configured", () => {
