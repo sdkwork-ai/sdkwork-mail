@@ -26,4 +26,18 @@ export {
   toMailAppSession,
   type MailIamSession,
 } from "./session/iamSession";
+export {
+  LEGACY_MAIL_ADMIN_SESSION_STORAGE_KEYS,
+  MAIL_ADMIN_SESSION_STORAGE_KEY,
+  clearMailAdminSessionStorage,
+  parseMailAdminSessionRecord,
+  purgeLegacyMailAdminSessionStorage,
+  readMailAdminSessionStorage,
+  resolveMailAdminSessionBindingKey,
+  writeMailAdminSessionStorage,
+  type MailAdminSessionBindingSource,
+  type MailAdminSessionRecord,
+  type MailAdminSessionStorageLike,
+  type MailAdminSessionStorages,
+} from "./session/adminSessionStorage";
 export type { MailAppSdkClient, MailAppSdkPort } from "./sdk/appSdkPort";

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState, type FormEvent, type ReactNode } from "react";
+import { mail_IAM_SESSION_CHANGED_EVENT, type MailIamSession } from "@sdkwork/mail-pc-core";
 
 import {
   bootstrapAdminAuth,
@@ -13,6 +14,10 @@ interface AuthGateProps {
   children: ReactNode;
 }
 
+interface MailIamSessionChangedDetail {
+  session?: MailIamSession | null;
+}
+
 export function AuthGate({ children }: AuthGateProps) {
   const [session, setSession] = useState<MailAdminSession | null>(() => loadAdminSession());
   const [form, setForm] = useState<MailAdminSession>(session ?? DEFAULT_ADMIN_SESSION);
@@ -22,6 +27,29 @@ export function AuthGate({ children }: AuthGateProps) {
       bootstrapAdminAuth();
     }
   }, [session]);
+
+  // The admin session is bound to the mail user session that created it: when
+  // that session is cleared or replaced, the admin surface must sign out too.
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const handleMailSessionChanged = (event: Event) => {
+      const detail = (event as CustomEvent<MailIamSessionChangedDetail | undefined>).detail;
+      if (detail?.session) {
+        return;
+      }
+      clearAdminSession();
+      setSession(null);
+      setForm(DEFAULT_ADMIN_SESSION);
+    };
+
+    window.addEventListener(mail_IAM_SESSION_CHANGED_EVENT, handleMailSessionChanged);
+    return () => {
+      window.removeEventListener(mail_IAM_SESSION_CHANGED_EVENT, handleMailSessionChanged);
+    };
+  }, []);
 
   const handleSubmit = useCallback(
     (event: FormEvent<HTMLFormElement>) => {

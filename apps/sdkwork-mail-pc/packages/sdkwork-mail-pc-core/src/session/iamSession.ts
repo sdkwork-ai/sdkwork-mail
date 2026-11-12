@@ -5,6 +5,7 @@ import {
   type AuthTokens,
 } from "@sdkwork/sdk-common";
 
+import { clearMailAdminSessionStorage } from "./adminSessionStorage";
 import { DEFAULT_APP_SESSION, type MailAppSession } from "./appSession";
 
 export interface MailIamSessionUser {
@@ -186,6 +187,12 @@ export function clearMailIamSessionTokens(): void {
       window.sessionStorage.removeItem(legacyKey);
       window.localStorage.removeItem(legacyKey);
     }
+    // The admin surface shares this origin, so its session must not outlive the
+    // user session that owns it.
+    clearMailAdminSessionStorage({
+      localStorage: window.localStorage,
+      sessionStorage: window.sessionStorage,
+    });
   }
   getMailGlobalTokenManager().clearTokens();
   dispatchMailIamSessionChanged(null);
