@@ -84,18 +84,12 @@ impl AppContext {
         if permission.trim().is_empty() {
             return false;
         }
-        // `tenant.admin` is a legacy platform-admin marker, not a grant pattern.
-        if self
-            .permission_scope
-            .iter()
-            .any(|scope| scope == "tenant.admin")
-        {
-            return true;
-        }
         // Wildcard-aware (AUTHORIZATION_STATE_SPEC 3.5): `*`, `{domain}.*`, and
         // `*.{action}` grants must authorize without re-login or re-expansion.
+        // `tenant.admin` is a legacy platform-admin marker, not a grant pattern.
         self.permission_scope.iter().any(|granted| {
-            sdkwork_web_core::request_context::permission_code_matches(granted, permission)
+            granted == "tenant.admin"
+                || sdkwork_web_core::request_context::permission_code_matches(granted, permission)
         })
     }
 }
