@@ -84,23 +84,19 @@ impl AppContext {
         if permission.trim().is_empty() {
             return false;
         }
-
-        if self.permission_scope.contains("*")
-            || self.permission_scope.contains("tenant.admin")
-            || self.permission_scope.contains(permission)
+        // `tenant.admin` is a legacy platform-admin marker, not a grant pattern.
+        if self
+            .permission_scope
+            .iter()
+            .any(|scope| scope == "tenant.admin")
         {
             return true;
         }
-
-        let segments: Vec<&str> = permission.split('.').collect();
-        for index in 1..segments.len() {
-            let wildcard = format!("{}.*", segments[..index].join("."));
-            if self.permission_scope.contains(wildcard.as_str()) {
-                return true;
-            }
-        }
-
-        false
+        // Wildcard-aware (AUTHORIZATION_STATE_SPEC 3.5): `*`, `{domain}.*`, and
+        // `*.{action}` grants must authorize without re-login or re-expansion.
+        self.permission_scope.iter().any(|granted| {
+            sdkwork_web_core::request_context::permission_code_matches(granted, permission)
+        })
     }
 }
 
